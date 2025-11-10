@@ -1,0 +1,1330 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://legitwell.github.io/Vlabs/Semana%2005%20-%20INFORMATION%20GATHERING%20-Business/OSINT%20-%20Business/">
+      
+      
+        <link rel="prev" href="../../Semana%2005%20-%20INFORMATION%20GATHERING%20-%20Infra/INFRA/">
+      
+      
+        <link rel="next" href="../../Semana%2006%20-%20Mecanismo%20de%20Defesa/Semana%2006%20-%20Mecanismo%20de%20Defesa/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>OSINT Business - LAB Desec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-01-osint-business" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LAB Desec" class="md-header__button md-logo" aria-label="LAB Desec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB Desec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OSINT   Business
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LAB Desec" class="md-nav__button md-logo" aria-label="LAB Desec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LAB Desec
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2004%20-%20Cen%C3%A1rio%20CTF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Semana 04   Cenário CTF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vlabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vlabs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 05   INFORMATION GATHERING   Infra
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 05   INFORMATION GATHERING   Infra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2005%20-%20INFORMATION%20GATHERING%20-%20Infra/INFRA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    INFRA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 05   INFORMATION GATHERING  Business
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 05   INFORMATION GATHERING  Business
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    OSINT   Business
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT   Business
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-01-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 01 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-02-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 02 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-03-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 03 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-04-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 04 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-05-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 05 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-06-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 06 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-nome-do-documento-ridoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Nome do Documento: RI.doc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="- Nome do Documento: RI.doc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-07-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 07 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-08-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 08 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-09-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 09 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 06   Mecanismo de Defesa
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 06   Mecanismo de Defesa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20Mecanismo%20de%20Defesa/Semana%2006%20-%20Mecanismo%20de%20Defesa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Semana 06 - Mecanismo de Defesa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 06   OSINT
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 06   OSINT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20OSINT/Semana%2006%20-%20OSINT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 06   Scanning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 06   Scanning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20Scanning/Semana%2006%20-%20Scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 07   Enumeration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 07   Enumeration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2007%20-%20Enumeration/Semana%2007%20-%20Enumeration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 07   Vulnerabilidades e Metasploit Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 07   Vulnerabilidades e Metasploit Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2007%20-%20Vulnerabilidades%20e%20Metasploit%20Framework/Semana%2007%20-%20Vulnerabilidades%20e%20Metasploit%20Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-01-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 01 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-02-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 02 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-03-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 03 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-04-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 04 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-05-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 05 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-06-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 06 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-nome-do-documento-ridoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Nome do Documento: RI.doc
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="- Nome do Documento: RI.doc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-07-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 07 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-08-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 08 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-09-osint-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 09 - OSINT - Business
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>OSINT   Business</h1>
+
+<h3 id="lab-01-osint-business">LAB 01 - OSINT - Business</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>90ffda96ffce620d4ac8a08357bacc391a11f794</code></p>
+<p><strong>Análise / Alvo:</strong> <code>businesscorp.com.br</code></p>
+<p><strong>Pergunta:</strong> Realizar uma coleta de endereços e-mails para o domínio <code>businesscorp.com.br</code>.</p>
+<p>![[Pasted image 20251102194850.png]]</p>
+<p><strong>Resposta:</strong> Para realizar a coleta de e-mails (OSINT), Abri o site e encontrei os 3 emails. </p>
+<h3 id="lab-02-osint-business">LAB 02 - OSINT - Business</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>96c62208eddb3eda917a32c79436f7b2a62b5a7b</code></p>
+<p><strong>Análise / Alvo:</strong> <code>businesscorp.com.br</code></p>
+<p><strong>Pergunta:</strong> Utilizar técnicas de Google Hacking no domínio <code>businesscorp.com.br</code> para encontrar um arquivo que contém informações sensíveis e inserir a "key" encontrada.</p>
+<p><strong>Resposta:</strong> Para encontrar arquivos sensíveis de forma passiva (OSINT), utilizamos o Google Hacking (Google Dorks). O objetivo é instruir o Google a filtrar resultados que correspondam a padrões de arquivos de configuração ou senhas expostas.</p>
+<p><strong>Comando Utilizado (Google Dork):</strong></p>
+<pre><code>site:businesscorp.com.br inurl:senha
+</code></pre>
+<p>![[Pasted image 20251102195320.png]]</p>
+<p><strong>Explicação do Comando:</strong></p>
+<ul>
+<li>
+<p><strong><code>site:businesscorp.com.br</code></strong>: Restringe a pesquisa do Google apenas para páginas indexadas dentro deste domínio específico.</p>
+</li>
+<li>
+<p><strong><code>inurl:senha</code></strong>: Filtra os resultados, mostrando apenas páginas que contenham a palavra "senha" em sua URL. Isso é um forte indicador de arquivos de configuração, painéis de teste ou credenciais acidentalmente expostas.</p>
+</li>
+</ul>
+<p><strong>Resultado Obtido:</strong> O Google Dork levou ao seguinte resultado:</p>
+<ul>
+<li><strong>URL Encontrada:</strong> <code>http://www.businesscorp.com.br/config</code></li>
+</ul>
+<p>Ao acessar essa URL, foi encontrado um arquivo de configurações com o seguinte conteúdo:</p>
+<pre><code>CONFIGURACOES DO SERVIDOR
+
+HARDWARE DELL
+
+usuario: admin
+senha: b3sac992883
+</code></pre>
+<ul>
+<li><strong>KEY:</strong> <code>Gh4ck1ng9988299311</code></li>
+</ul>
+<h3 id="lab-03-osint-business">LAB 03 - OSINT - Business</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>75957300bfb4e3f5aa0a0ea1fbc139a05cda5bcd</code></p>
+<p><strong>Análise / Alvo:</strong> <code>businesscorp.com.br</code></p>
+<p><strong>Pergunta:</strong> Utilizar técnicas de pesquisa em cache no domínio <code>businesscorp.com.br</code> e conseguir a key para pontuar.</p>
+<p><strong>Resposta:</strong> A investigação foi realizada em duas etapas. Primeiro, analisamos o arquivo <code>robots.txt</code> para identificar arquivos ou diretórios que o alvo tentou esconder dos motores de busca. Em seguida, usamos uma ferramenta de cache (Wayback Machine) para acessar o conteúdo de um arquivo que já havia sido removido do servidor.</p>
+<p><strong>Metodologia / URLs Acessadas:</strong></p>
+<ol>
+<li><strong>Análise do <code>robots.txt</code>:</strong> <code>http://businesscorp.com.br/robots.txt</code></li>
+<li>
+<p>![[Pasted image 20251102200619.png]]</p>
+</li>
+<li>
+<p><strong>Consulta ao Cache (Wayback Machine):</strong> <code>http://web.archive.org/web/20191126114209/http://businesscorp.com.br/configuracoes/comunicacao/projeto.txt</code></p>
+</li>
+<li>![[Pasted image 20251102200637.png]]</li>
+</ol>
+<p><strong>Explicação da Metodologia:</strong></p>
+<ol>
+<li>
+<p>O <code>robots.txt</code> é um arquivo que instrui <em>crawlers</em> (como o Google). Paradoxalmente, ele é público e frequentemente vaza a localização de áreas sensíveis (como <code>/admin</code>, <code>/bkp</code>). Em vez de um <code>Disallow</code>, encontramos um <code>Allow</code> explícito para <code>.../projeto.txt</code>, o que é altamente suspeito.</p>
+</li>
+<li>
+<p>Ao tentar acessar o arquivo diretamente (conforme implícito no lab), ele não estava mais disponível. A "técnica de cache" foi usar o <strong>Wayback Machine (archive.org)</strong> para encontrar um <em>snapshot</em> (cópia histórica) dessa URL.</p>
+</li>
+</ol>
+<p><strong>Resultado Obtido:</strong> O snapshot da Wayback Machine (datado de 26/Nov/2019) revelou o conteúdo do arquivo <code>projeto.txt</code>, que continha informações internas e a <em>key</em> do desafio:</p>
+<pre><code>COMUNICACAO INTERNA PROJETO BUSINESSCORP
+...
+DEPARTAMENTOS ENVOLVIDOS
+MARKETING, DESENVOLVIMENTO
+...
+TRELLO:
+https://trello.com/b/kaqiiGDI/businesscorpcombr
+...
+KEY: c4ch3_1666277399911a
+</code></pre>
+<ul>
+<li><strong>KEY:</strong> <code>c4ch3_1666277399911a</code></li>
+</ul>
+<h3 id="lab-04-osint-business">LAB 04 - OSINT - Business</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>80c6f98a362afaad0135c0148222920fc8777711</code></p>
+<p><strong>Análise / Alvo:</strong> <code>businesscorp.com.br</code> (Registros DNS e Trello)</p>
+<p><strong>Pergunta:</strong> Qual a senha e o nome do serviço é possível descobrir no painel do Trello da <code>businesscorp.com.br</code>?</p>
+<p><strong>Resposta:</strong> Para descobrir o painel Trello, foi realizada uma enumeração de subdomínios via <strong>Transferência de Zona DNS (AXFR)</strong>. Esta técnica explorou uma má configuração no nameserver do alvo, permitindo listar todos os registros DNS do domínio. A listagem revelou um subdomínio <code>trello.businesscorp.com.br</code> que, através de um registro CNAME, apontava para o painel Trello público.</p>
+<p><strong>Comando Utilizado (Transferência de Zona):</strong></p>
+<p>Bash</p>
+<pre><code>dig -t axfr businesscorp.com.br @ns2.businesscorp.com.br
+</code></pre>
+<p>![[Pasted image 20251102201957.png]]</p>
+<p><strong>Explicação do Comando:</strong></p>
+<ul>
+<li>
+<p><strong><code>dig</code></strong>: Ferramenta de linha de comando para consulta de servidores DNS.</p>
+</li>
+<li>
+<p><strong><code>-t axfr</code></strong>: Define o tipo (<code>-t</code>) de consulta como <code>AXFR</code> (Full Zone Transfer), solicitando ao servidor DNS todos os registros que ele possui para o domínio.</p>
+</li>
+<li>
+<p><strong><code>businesscorp.com.br</code></strong>: O domínio alvo da enumeração.</p>
+</li>
+<li>
+<p><strong><code>@ns2.businesscorp.com.br</code></strong>: Especifica o nameserver (<code>@</code>) que será consultado (o <code>ns2</code>, que estava vulnerável à transferência de zona).</p>
+</li>
+</ul>
+<p><strong>Resultado Obtido:</strong> A transferência de zona (mostrada na segunda imagem) foi bem-sucedida e revelou o seguinte registro CNAME:</p>
+<p>DNS Zone file</p>
+<pre><code>trello.businesscorp.com.br. 3600 IN CNAME trello.com/b/bl7wd8HN/businesscorpcombr.
+</code></pre>
+<p>![[Pasted image 20251102202036.png]]</p>
+<p>Ao acessar a URL <code>https://trello.com/b/bl7wd8HN/businesscorpcombr</code>, um painel Trello público foi encontrado (primeira imagem). A análise dos <em>cards</em> revelou as seguintes credenciais:</p>
+<ul>
+<li>
+<p><strong>Serviço:</strong> <code>webmin</code> (identificado no <em>card</em> "Configurar webmin")</p>
+</li>
+<li>
+<p><strong>Senha:</strong> <code>123qweAm</code> (identificada no <em>card</em> "senha do businesscorp.com.br")</p>
+</li>
+</ul>
+<h3 id="lab-05-osint-business">LAB 05 - OSINT - Business</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>d2a19f76f7538e1ef65ee248e6bc513ccdcdf138</code></p>
+<p><strong>Análise / Alvo:</strong> <code>Pastebin</code> (Vazamentos da <code>businesscorp.com.br</code>)</p>
+<p><strong>Pergunta:</strong> Existe alguma informação sensível da <code>businesscorp.com.br</code> no Pastebin?</p>
+<p><strong>Resposta:</strong> Sim. Dando continuidade à investigação do Lab 04, analisamos o link do Pastebin (<code>https://pastebin.com/57J3tLmc</code>) que foi encontrado em um <em>card</em> do painel Trello público. Sites de <em>paste</em> são comumente usados para compartilhar dados vazados (data leaks).</p>
+<p><strong>Metodologia / URL Acessada:</strong></p>
+<pre><code>https://pastebin.com/57J3tLmc
+</code></pre>
+<p>![[Pasted image 20251102202406.png]]</p>
+<p><strong>Explicação da Metodologia:</strong></p>
+<ul>
+<li>
+<p>A URL foi obtida na análise do painel Trello no Lab 04.</p>
+</li>
+<li>
+<p>Acessamos o link, que levou a um <em>paste</em> público intitulado "Leak businesscorp", datado de 6 de julho de 2021.</p>
+</li>
+<li>
+<p>Analisamos o conteúdo deste <em>paste</em> em busca de credenciais ou outras informações sensíveis.</p>
+</li>
+</ul>
+<p><strong>Resultado Obtido:</strong> O <em>paste</em> continha um vazamento de credenciais de um e-mail corporativo:</p>
+<pre><code>1. camila@businesscorp.com.br
+2. ca123456
+</code></pre>
+<p>As informações sensíveis encontradas foram:</p>
+<ul>
+<li>
+<p><strong>Usuário:</strong> <code>camila@businesscorp.com.br</code></p>
+</li>
+<li>
+<p><strong>Senha:</strong> <code>ca123456</code></p>
+</li>
+</ul>
+<h3 id="lab-06-osint-business">LAB 06 - OSINT - Business</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>83ff4b5f8d2cb305c5a9b1f01b340e3131dd2ba4</code></p>
+<p><strong>Análise / Alvo:</strong> <code>businesscorp.com.br</code></p>
+<p><strong>Pergunta:</strong> Qual o nome do documento é possível encontrar via Google Hacking no <code>businesscorp.com.br</code>?</p>
+<p><strong>Resposta:</strong> Para encontrar documentos específicos indexados pelo Google, utilizamos uma técnica de Google Dork focada em extensões de arquivo. O objetivo é filtrar resultados que sejam arquivos de documento (como <code>.doc</code>, <code>.docx</code>, <code>.pdf</code>) que possam conter informações corporativas.</p>
+<p><strong>Comando Utilizado (Google Dork):</strong></p>
+<pre><code>site:businesscorp.com.br .doc
+</code></pre>
+<p>![[Pasted image 20251102203039.png]]</p>
+<p><strong>Explicação do Comando:</strong></p>
+<ul>
+<li>
+<p><strong><code>site:businesscorp.com.br</code></strong>: Restringe a pesquisa do Google apenas para páginas indexadas dentro deste domínio.</p>
+</li>
+<li>
+<p><strong><code>.doc</code></strong>: Filtra os resultados para incluir páginas que contenham a string <code>.doc</code>, que o Google associa fortemente a arquivos do tipo "Microsoft Word Document". Alternativas como <code>ext:doc</code> ou <code>filetype:doc</code> teriam um efeito similar.</p>
+</li>
+</ul>
+<p><strong>Resultado Obtido:</strong> O Google Dork (conforme a primeira imagem) revelou uma URL <code>http://www.businesscorp.com.br/ri/</code> com o título "Index of /ri".</p>
+<p>Ao acessar esta URL (conforme a segunda imagem), foi confirmado que se tratava de um diretório com a opção de "Index of" (Listagem de Diretório) habilitada. Dentro deste diretório, foi encontrado o seguinte documento:</p>
+<h2 id="-nome-do-documento-ridoc">- <strong>Nome do Documento:</strong> <code>RI.doc</code></h2>
+<h3 id="lab-07-osint-business">LAB 07 - OSINT - Business</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>66c68c619b7f8a14b4eb33258f319112fb7b5734</code></p>
+<p><strong>Análise / Alvo:</strong> Metadados do arquivo <code>RI.doc</code> (encontrado no Lab 06).</p>
+<p><strong>Pergunta:</strong> Realizar uma pesquisa por metadados em documentos encontrados no domínio <code>businesscorp.com.br</code> e responder: Qual o nome do colaborador encontrado?</p>
+<p><strong>Resposta:</strong> Dando continuidade ao Lab 06, analisamos os metadados do arquivo <code>RI.doc</code> que foi baixado. Metadados são "dados sobre dados" que ficam embutidos em arquivos e podem vazar informações como autores, softwares, datas e, neste caso, nomes de colaboradores. Para esta tarefa, utilizamos a ferramenta <code>exiftool</code>.</p>
+<p><strong>Comando Utilizado:</strong></p>
+<p>Bash</p>
+<pre><code>exiftool RI.doc
+</code></pre>
+<p>![[Pasted image 20251102203746.png]]</p>
+<p><strong>Explicação do Comando:</strong></p>
+<ul>
+<li>
+<p><strong><code>exiftool</code></strong>: É uma ferramenta de linha de comando padrão no Kali Linux, usada para ler, escrever e editar metadados de uma vasta gama de tipos de arquivo.</p>
+</li>
+<li>
+<p><strong><code>RI.doc</code></strong>: O arquivo alvo que foi baixado para análise.</p>
+</li>
+</ul>
+<p><strong>Resultado Obtido:</strong> A análise dos metadados com o <code>exiftool</code> (conforme a imagem) revelou diversas informações, incluindo:</p>
+<ul>
+<li>
+<p><strong><code>Author</code></strong>: <code>Rogerio Severovisk</code></p>
+</li>
+<li>
+<p><strong><code>Company</code></strong>: <code>Business Corp - businesscorp.com.br</code></p>
+</li>
+<li>
+<p><strong><code>Keywords</code></strong>: <code>rogerio@businesscorp.com.br | LinkedIn: https://www.linkedin.com/in/rogerio-severo</code></p>
+</li>
+</ul>
+<p>O nome do colaborador encontrado nos metadados é <strong>Rogerio Severovisk</strong>.</p>
+<h3 id="lab-08-osint-business">LAB 08 - OSINT - Business</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>c91a488330e650e2119d2ddffe5eb97f44e0f2b2</code></p>
+<p><strong>Análise / Alvo:</strong> Perfil LinkedIn de <code>Rogerio Severovisk</code> (colaborador da <code>businesscorp.com.br</code>).</p>
+<p><strong>Pergunta:</strong> Realizar uma pesquisa pelo colaborador da <code>businesscorp.com.br</code> e obter a key para pontuar.</p>
+<p><strong>Resposta:</strong> Dando continuidade ao Lab 07, onde o nome "Rogerio Severovisk" e um link de LinkedIn foram descobertos nos metadados do arquivo <code>RI.doc</code>, esta etapa consistiu em analisar o perfil público desse colaborador. O objetivo é encontrar informações sensíveis ou a <em>key</em> do desafio, que poderiam ser vazadas em posts públicos.</p>
+<p><strong>Metodologia / URL Acessada:</strong></p>
+<pre><code>https://www.linkedin.com/in/rogerio-severovisk-businesscorp/
+</code></pre>
+<p>![[Pasted image 20251102204047.png]]</p>
+<p><strong>Explicação da Metodologia:</strong></p>
+<ul>
+<li>
+<p>A URL foi acessada com base nos dados (<code>Keywords</code>) encontrados na análise de metadados do Lab 07.</p>
+</li>
+<li>
+<p>Inspecionamos o perfil público do colaborador, com foco na seção "Activity" (Atividade), que lista os posts recentes feitos pelo usuário.</p>
+</li>
+</ul>
+<p><strong>Resultado Obtido:</strong> A análise da seção "Activity" do perfil (conforme a imagem) revelou um post público feito por Rogerio Severovisk que continha a <em>key</em> do desafio:</p>
+<ul>
+<li>
+<p><strong>Texto do Post:</strong> <code>Information Gathering KEY: 8812737123129912s</code></p>
+</li>
+<li>
+<p><strong>KEY:</strong> <code>8812737123129912s</code></p>
+</li>
+</ul>
+<h3 id="lab-09-osint-business">LAB 09 - OSINT - Business</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>ff4b82f3d417ce162efa07c3c3a147dc54ad6d14</code></p>
+<p><strong>Análise / Alvo:</strong> Posts do colaborador <code>Rogerio Severovisk</code> (LinkedIn).</p>
+<p><strong>Pergunta:</strong> De acordo com a vaga de emprego da <code>businesscorp.com.br</code>, qual possivelmente é o firewall utilizado na empresa?</p>
+<p><strong>Resposta:</strong> Dando continuidade à análise do perfil de <code>Rogerio Severovisk</code> (iniciada nos labs 07 e 08), foi identificado um segundo post público. Este post divulgava uma vaga de "Oportunidade - Tecnologia da Informação" na <code>businesscorp.com.br</code>. A descrição da vaga listava as tecnologias e competências desejadas, o que fornece informações valiosas sobre o <em>stack</em> tecnológico interno da empresa.</p>
+<p><strong>Metodologia / URL Acessada:</strong></p>
+<ul>
+<li>
+<p>Análise de posts no perfil do colaborador.</p>
+</li>
+<li>
+<p>URL do Post: <code>pt.linkedin.com/posts/rogerio-severovisk-businesscorp...</code> (conforme imagem)</p>
+</li>
+<li>![[Pasted image 20251102204221.png]]</li>
+<li></li>
+</ul>
+<p><strong>Explicação da Metodologia:</strong></p>
+<ul>
+<li>
+<p>Ao investigar o perfil do colaborador (além do post da KEY do Lab 08), encontramos um post mais antigo (5 anos) sobre uma vaga de emprego.</p>
+</li>
+<li>
+<p>A leitura dos requisitos da vaga (Experiência com...) permite inferir quais são as ferramentas de infraestrutura utilizadas pela empresa, pois ela busca profissionais que já saibam operá-las.</p>
+</li>
+</ul>
+<p><strong>Resultado Obtido:</strong> A descrição da vaga listava as seguintes tecnologias:</p>
+<ul>
+<li>
+<p>Windows Server 2008 e Active Directory</p>
+</li>
+<li>
+<p>Servidores Linux</p>
+</li>
+<li>
+<p>Banco de dados mysql</p>
+</li>
+<li>
+<p><strong>Netgate-pfSense-Firewall</strong></p>
+</li>
+</ul>
+<p>O firewall possivelmente utilizado pela empresa é o <strong>Netgate-pfSense</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
