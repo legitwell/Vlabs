@@ -1,0 +1,1048 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://legitwell.github.io/Vlabs/Semana%2007%20-%20Enumeration/Semana%2007%20-%20Enumeration/">
+      
+      
+        <link rel="prev" href="../../Semana%2006%20-%20Scanning/Semana%2006%20-%20Scanning/">
+      
+      
+        <link rel="next" href="../../Semana%2007%20-%20Vulnerabilidades%20e%20Metasploit%20Framework/Semana%2007%20-%20Vulnerabilidades%20e%20Metasploit%20Framework/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>LAB 01 - LAB Desec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-01" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LAB Desec" class="md-header__button md-logo" aria-label="LAB Desec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB Desec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LAB 01
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LAB Desec" class="md-nav__button md-logo" aria-label="LAB Desec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LAB Desec
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2004%20-%20Cen%C3%A1rio%20CTF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Semana 04   Cenário CTF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vlabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vlabs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 05   INFORMATION GATHERING   Infra
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 05   INFORMATION GATHERING   Infra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2005%20-%20INFORMATION%20GATHERING%20-%20Infra/INFRA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    INFRA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 05   INFORMATION GATHERING  Business
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 05   INFORMATION GATHERING  Business
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2005%20-%20INFORMATION%20GATHERING%20-Business/OSINT%20-%20Business/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OSINT   Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 06   Mecanismo de Defesa
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 06   Mecanismo de Defesa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20Mecanismo%20de%20Defesa/Semana%2006%20-%20Mecanismo%20de%20Defesa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Semana 06 - Mecanismo de Defesa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 06   OSINT
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 06   OSINT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20OSINT/Semana%2006%20-%20OSINT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 06   Scanning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 06   Scanning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20Scanning/Semana%2006%20-%20Scanning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 07   Enumeration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 07   Enumeration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semana 07   Vulnerabilidades e Metasploit Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Semana 07   Vulnerabilidades e Metasploit Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Semana%2007%20-%20Vulnerabilidades%20e%20Metasploit%20Framework/Semana%2007%20-%20Vulnerabilidades%20e%20Metasploit%20Framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-01">LAB 01</h1>
+<p>Lab ID: 29c597cc4c9c5146fe5cddf248270e767eba39df</p>
+<p>Database</p>
+<p>Analise o segmento de rede 172.16.1.1 até 172.16.1.100 (o host 172.16.1.5 está fora do escopo) e responda:</p>
+<p>Existe algum host com o serviço MySql ativo na rede?</p>
+<p>Resposta : 172.16.1.33</p>
+<pre><code class="language-CSS">nmap -p 3306 172.16.1.1-100 --open
+</code></pre>
+<p>![[/Untitled 21.png|Untitled 21.png]]</p>
+<h1 id="lab-2">LAB 2</h1>
+<p><strong>Database</strong></p>
+<p>Lab ID: 5ea4aabba6c8aee74471553be462fc7cca14777a</p>
+<p>Qual a versão do MySQL no Host encontrado anteriormente?</p>
+<p>Resposta : 5.1.73-1</p>
+<p>![[/Untitled 1 4.png|Untitled 1 4.png]]</p>
+<p>Esse comando é usado para se conectar a um servidor MySQL hospedado no IP 172.16.1.33 usando o usuário "root". Aqui está a explicação detalhada do comando:</p>
+<ul>
+<li><code>**mysql**</code>: É o programa cliente do MySQL usado para se conectar ao servidor MySQL.</li>
+<li><code>**h 172.16.1.33**</code>: Especifica o host (IP) do servidor MySQL ao qual você deseja se conectar. Nesse caso, o IP é 172.16.1.33.</li>
+<li><code>**u root**</code>: Define o usuário que está sendo usado para se conectar ao servidor MySQL. Neste caso, está sendo usado o usuário "root".</li>
+<li>Ao executar esse comando, o MySQL tentará se conectar ao servidor MySQL no IP 172.16.1.33 usando o usuário "root". Se a conexão for bem-sucedida, você poderá interagir com o servidor MySQL por meio da linha de comando do MySQL.</li>
+</ul>
+<p>O servidor MySQL está executando a <strong>versão 5.1.73-1</strong> no sistema operacional Debian.</p>
+<h1 id="lab-3">LAB 3</h1>
+<p><strong>Database</strong></p>
+<p>Lab ID: a25ed3540040e482db1e1ad25e85bacad572c9e4</p>
+<p>Realize a enumeração no MySQL do host encontrado anteriormente e consiga a key no banco de dados encontrado.</p>
+<p>![[/Untitled 2 4.png|Untitled 2 4.png]]</p>
+<p>Para obter a key no banco de dados <code>**vlab**</code> do host MySQL 172.16.1.33, você fez a enumeração corretamente. Aqui está o passo a passo simplificado:</p>
+<ol>
+<li>
+<p>Conecte-se ao MySQL no host 172.16.1.33:</p>
+<p><code>Plain
+mysql -h 172.16.1.33 -u root -p</code></p>
+</li>
+<li>
+<p>Liste os bancos de dados disponíveis:</p>
+<p><code>SQL
+SHOW DATABASES;</code></p>
+</li>
+<li>
+<p>Use o banco de dados <code>**vlab**</code>:</p>
+<p><code>SQL
+USE vlab;</code></p>
+</li>
+<li>
+<p>Liste as tabelas no banco de dados <code>**vlab**</code>:</p>
+<p><code>SQL
+SHOW TABLES;</code></p>
+</li>
+<li>
+<p>Exiba o conteúdo da tabela <code>**ativa**</code>:</p>
+<p><code>SQL
+SELECT * FROM ativa;</code></p>
+</li>
+</ol>
+<p>Isso deve retornar a chave <code>**KEY 662102538896**</code></p>
+<h1 id="lab-04">LAB 04</h1>
+<p><strong>SSH</strong></p>
+<p>Lab ID: b8be5661a77ea2c5ed5344d7b06eb26a1dfffc7b</p>
+<p>Neste mesmo host analisado anteriormente existe um serviço de SSH.</p>
+<p>Quais os métodos de autenticação aceitos no serviço de SSH?</p>
+<p>Resposta : publickey,password</p>
+<p>![[/Untitled 3 4.png|Untitled 3 4.png]]</p>
+<p>O erro <strong>"no matching host key type found"</strong> indica que o cliente SSH não conseguiu encontrar um tipo de chave de host compatível com o oferecido pelo servidor SSH no host 172.16.1.33. Isso geralmente ocorre quando o servidor SSH oferece tipos de chave de host que não são suportados pelo cliente SSH.</p>
+<h1 id="lab-05">LAB 05</h1>
+<p><strong>NFS - PARTE I</strong></p>
+<p>Lab ID: 2ba03ce463bc0a07c288203bd7060ad074db19fd</p>
+<p>Explore o serviço de NFS do servidor 172.16.1.31 e consiga a key.</p>
+<p>![[/Untitled 4 4.png|Untitled 4 4.png]]</p>
+<ol>
+<li><strong>Identificar o serviço NFS</strong>: O comando <code>**rpcinfo -p 172.16.1.31 | grep nfs**</code> é usado para listar os serviços RPC (Remote Procedure Call) disponíveis no servidor 172.16.1.31 e filtrar apenas as entradas relacionadas ao NFS (Network File System). Isso nos permite identificar que o NFS está sendo executado na porta 2049.</li>
+<li><strong>Verificar os diretórios compartilhados</strong>: O comando <code>**showmount -e 172.16.1.31**</code> é usado para listar os diretórios compartilhados disponíveis no servidor NFS (172.16.1.31). Ele nos informa que o diretório <code>**/home/camila**</code> está sendo compartilhado.</li>
+<li><strong>Criar um diretório local para montagem</strong>: O comando <code>**mkdir nfs**</code> é usado para criar um diretório local chamado <code>**nfs**</code> onde o compartilhamento NFS será montado. Este diretório servirá como um ponto de montagem para o compartilhamento remoto.</li>
+<li><strong>Montar o compartilhamento NFS</strong>: O comando <code>**mount -t nfs -o nfsvers=3 172.16.1.31:/home/camila nfs**</code> é usado para montar o compartilhamento NFS remoto no diretório local <code>**nfs**</code>. A opção <code>**t nfs**</code> especifica o tipo de sistema de arquivos como NFS, e <code>**o nfsvers=3**</code> define a versão do NFS a ser usada como 3.</li>
+<li><strong>Acessar o diretório NFS montado</strong>: O comando <code>**cd nfs**</code> é usado para entrar no diretório <code>**nfs**</code> onde o compartilhamento NFS foi montado. Isso nos permite acessar os arquivos e diretórios dentro do compartilhamento remoto.</li>
+<li><strong>Verificar o conteúdo do diretório NFS</strong>: O comando <code>**ls**</code> é usado para listar o conteúdo do diretório NFS montado, permitindo-nos verificar se o compartilhamento foi montado corretamente e se o arquivo <code>**key.txt**</code> está presente.</li>
+<li><strong>Visualizar o conteúdo do arquivo key.txt</strong>: O comando <code>**cat key.txt**</code> é usado para exibir o conteúdo do arquivo <code>**key.txt**</code>, que contém a chave necessária para habilitar um ponto no VLAB.</li>
+</ol>
+<p>Esses comandos são usados em conjunto para acessar e obter a chave no compartilhamento NFS do servidor 172.16.1.31.</p>
+<h1 id="lab-06">LAB 06</h1>
+<p><strong>NFS - PARTE II</strong></p>
+<p>Lab ID: 9f032acb136f7bb9ff090a227f9a495fcf02c685</p>
+<p>Consiga acesso ao shell ao host 172.16.1.31 através de manipulação de chaves ssh para obter a key.</p>
+<ol>
+<li>
+<p><strong>Gerar a chave SSH:</strong></p>
+<ul>
+<li>Execute o comando <code>**ssh-keygen -t rsa**</code> para gerar uma chave SSH. Isso criará um par de chaves pública e privada.</li>
+</ul>
+<p>![[/Untitled 5 4.png|Untitled 5 4.png]]</p>
+</li>
+<li>
+<p><strong>Montar o diretório NFS:</strong></p>
+<ul>
+<li>Utilize o comando <code>**mount -t nfs -o nfvers=3 172.16.1.31:/home/camila /home/nfs**</code> para montar o diretório NFS remoto em sua máquina local.</li>
+</ul>
+<p>![[/Untitled 6 3.png|Untitled 6 3.png]]</p>
+</li>
+<li>
+<p><strong>Acessar a pasta SSH e adicionar a chave pública:</strong></p>
+<ul>
+<li>Navegue até a pasta <code>**~/.ssh/**</code> em seu sistema local.</li>
+<li>Abra o arquivo <code>**authorized_keys**</code> e insira a chave pública gerada na etapa 1.</li>
+</ul>
+<p>![[/Untitled 7 3.png|Untitled 7 3.png]]</p>
+</li>
+</ol>
+<p>![[/Untitled 8 3.png|Untitled 8 3.png]]</p>
+<ol>
+<li>
+<p><strong>Conectar-se ao servidor SSH:</strong></p>
+<ul>
+<li>Use o comando <code>**ssh camila@172.16.1.31 -i id_rsa -o HostKeyAlgorithms=+ssh-dss -o PubkeyAcceptedAlgorithms=+ssh-rsa**</code> para se conectar ao servidor SSH. Substitua <code>**id_rsa**</code> pelo caminho da sua chave privada.</li>
+</ul>
+<p>![[8f07c411-8a6d-4cd0-8bae-142e364176d0.png]]</p>
+</li>
+<li>
+<p><strong>Explorar o sistema de arquivos:</strong></p>
+<ul>
+<li>Após se conectar, use o comando <code>**pwd**</code> para verificar o diretório atual.</li>
+</ul>
+<p>![[/Untitled 9 3.png|Untitled 9 3.png]]</p>
+<ul>
+<li>Use <code>**cd ../..**</code> para voltar à pasta raiz.</li>
+<li>Procure pelo arquivo <code>**key.txt**</code> usando <code>**ls -la**</code> para listar todos os arquivos, incluindo os ocultos.</li>
+<li>
+<p><strong>Encontrar a resposta do VLAB:</strong></p>
+</li>
+<li>
+<p>Abra o arquivo <code>**key.txt**</code> encontrado no passo anterior para encontrar a resposta do VLAB, que é <code>**999675754423**</code>.</p>
+</li>
+</ul>
+<p>![[/Untitled 10 3.png|Untitled 10 3.png]]</p>
+</li>
+</ol>
+<p>Certifique-se de substituir os caminhos e nomes de arquivos conforme necessário para corresponder à sua configuração específica.</p>
+<h1 id="lab-07-08-09">LAB 07 | 08 | 09</h1>
+<p><strong>NFS II</strong></p>
+<p>ID do laboratório: f73439e67146fa142f759d17d9f320c34df54355</p>
+<p>ID do laboratório: 8b6f2fe04ee2f74dccc93bd2dcb0fc9d205277f8</p>
+<p>ID do laboratório: 17c69319942b2da4295a3547bf2fc10ca3b0943a</p>
+<p>Utilize as técnicas de enumeração NFS no host 172.16.1.251 e informe quais as versões NFS suportadas.</p>
+<p>![[/Untitled 11 3.png|Untitled 11 3.png]]</p>
+<h1 id="lab-10">LAB 10</h1>
+<p><strong>FTP</strong></p>
+<p>ID do laboratório: cdcad4766b40276231f58d0825b5b1f7b9a62470</p>
+<p>Enumere o serviço de FTP do host: 172.16.1.31 e encontre uma chave para pontuar.</p>
+<p>![[/Untitled 12 3.png|Untitled 12 3.png]]</p>
+<h1 id="lab-11">LAB 11</h1>
+<p><strong>FTP - PARTE I</strong></p>
+<p>Lab ID: 243ac57079c67f699cc4fb5d4f1194aa5ea7de0e</p>
+<p>Utilize as técnicas de enumeração no host 172.16.1.251 e informe a versão do serviço FTP encontrada.</p>
+<p>Resposta : ProFTPD1.3.5</p>
+<p>![[/Untitled 13 2.png|Untitled 13 2.png]]</p>
+<h1 id="lab-12">LAB 12</h1>
+<p><strong>FTP - PARTE II</strong></p>
+<p>Lab ID: 73e7e0bf78736e9ce093713e726947bacf4254c5</p>
+<p>Ganhe acesso ao serviço de FTP no host 172.16.1.251 e consiga a key para pontuar.</p>
+<p>Resposta: ce6cfad1ff11b600bef6da1aa844996a</p>
+<p>![[/Untitled 14 2.png|Untitled 14 2.png]]</p>
+<h1 id="lab-13">LAB 13</h1>
+<p><strong>SMB</strong></p>
+<p>Lab ID: 7b581af4c9208ce84bab830e23567ef64655bb87</p>
+<p>Enumere o serviço de SMB e consiga a chave para pontuar.</p>
+<p>![[/Untitled 15 2.png|Untitled 15 2.png]]</p>
+<ul>
+<li><code>**smbclient**</code>: é o comando para acessar recursos compartilhados em servidores SMB.</li>
+<li><code>**L**</code>: é o parâmetro para listar recursos compartilhados.</li>
+<li><code>**//172.16.1.4/**</code>: especifica o endereço IP do servidor e o nome do compartilhamento. No caso, <code>**172.16.1.4**</code> é o endereço IP do servidor e <code>**/**</code> indica que queremos listar todos os compartilhamentos disponíveis no servidor.</li>
+<li><code>**N**</code>: indica que queremos fazer a conexão sem especificar um nome de usuário ou senha.</li>
+</ul>
+<p>Este comando retornará uma lista dos compartilhamentos disponíveis no servidor SMB com o endereço IP <code>**172.16.1.4**</code>.</p>
+<p>![[/Untitled 16 2.png|Untitled 16 2.png]]</p>
+<p>![[/Untitled 17 2.png|Untitled 17 2.png]]</p>
+<h1 id="lab-14">LAB 14</h1>
+<p><strong>SNMP</strong></p>
+<p>Lab ID: 7dca58db46ecb2efbc629f69b32fc468435067af</p>
+<p>Enumere o serviço de SNMP e consiga a KEY para pontuar.</p>
+<p>![[/Untitled 18 2.png|Untitled 18 2.png]]</p>
+<ul>
+<li><code>**snmpwalk**</code>: comando para caminhar pela árvore de informações SNMP.</li>
+<li><code>**c public**</code>: especifica a comunidade SNMP a ser usada. A comunidade SNMP é semelhante a uma senha e é usada para autenticar o acesso ao dispositivo SNMP. Aqui, a comunidade é "public", que é comumente usada para acesso de leitura (read-only).</li>
+<li><code>**v1**</code>: especifica a versão do SNMP a ser usada. Neste caso, é a versão 1 do SNMP.</li>
+<li><code>**172.16.1.4**</code>: endereço IP do dispositivo SNMP que será consultado.</li>
+<li><code>**1.3.6.1.4.1.77.1.2.25**</code>: identificador de objeto (OID) que representa a parte da árvore SNMP que desejamos consultar. No caso, parece estar relacionado a informações de usuários do sistema.</li>
+</ul>
+<p>As linhas retornadas pelo comando representam as informações recuperadas do dispositivo SNMP, como o nome dos usuários. A chave (KEY) mencionada no final parece ser uma resposta ao seu pedido específico. Portanto, a resposta seria: <code>**KEY298700191820**</code>.</p>
+<h1 id="lab-15">LAB 15</h1>
+<p><strong>SNMP II</strong></p>
+<p>Lab ID: f142b53623052d1c9395beca20bca731c15f8439</p>
+<p>Utilize as técnicas de análise SNMP no host: 172.30.0.103 e informe qual a community utilizada no serviço.</p>
+<p>![[/Untitled 19 2.png|Untitled 19 2.png]]</p>
+<ul>
+<li><code>**onesixtyone**</code>: o nome do comando utilizado para iniciar a ferramenta.</li>
+<li><code>**c /usr/share/wordlists/metasploit/snmp_default_pass.txt**</code>: especifica o caminho para o arquivo contendo as strings que serão usadas para brute force nas comunidades SNMP. Neste caso, a ferramenta está usando o arquivo <code>**snmp_default_pass.txt**</code> que contém senhas padrão comumente usadas em comunidades SNMP.</li>
+<li><code>**172.30.0.103**</code>: o endereço IP do alvo que será escaneado em busca de comunidades SNMP vulneráveis.</li>
+</ul>
+<p>O comando escaneia o host <code>**172.30.0.103**</code> em busca de comunidades SNMP vulneráveis usando senhas padrão listadas no arquivo <code>**snmp_default_pass.txt**</code>. No exemplo dado, foi encontrada uma comunidade SNMP chamada <code>**Secret**</code> no host <code>**172.30.0.103**</code>.</p>
+<h1 id="lab-16">LAB 16</h1>
+<p><strong>SNMP II</strong></p>
+<p>Lab ID: 8e993cde6c1d62fef19e51cbce068613422127d4</p>
+<p>Utilize as técnicas de análise SNMP no host:172.30.0.103 e informe qual o hostname.</p>
+<p>![[/Untitled 20 2.png|Untitled 20 2.png]]</p>
+<ul>
+<li><code>**snmp-check**</code>: o nome do comando utilizado para iniciar a ferramenta.</li>
+<li><code>**172.30.0.103**</code>: o endereço IP do dispositivo remoto que será enumerado.</li>
+<li><code>**c Secret**</code>: especifica a comunidade SNMP a ser utilizada durante a enumeração. Neste caso, a comunidade é <code>**Secret**</code>.</li>
+</ul>
+<p>A saída do comando fornece diversas informações sobre o dispositivo remoto:</p>
+<ul>
+<li><code>**Hostname**</code>: o nome do host, que neste caso é <code>**SRV01**</code>.</li>
+</ul>
+<h1 id="lab-17">LAB 17</h1>
+<p><strong>SNMP II</strong></p>
+<p>Lab ID: 4290653214d09bc7150226b2b1f3670c2a146545</p>
+<p>Utilize as técnicas de análise SNMP no host:172.30.0.103 e encontre a chave para pontuar em informações sobre o armazenamento do discos do host.</p>
+<p>![[/Untitled 20 2.png|Untitled 20 2.png]]</p>
+<p>![[/Untitled 21 2.png|Untitled 21 2.png]]</p>
+<h1 id="lab-18">LAB 18</h1>
+<p><strong>SNMP II</strong></p>
+<p>Lab ID: 198cac2b229c544247ecf1fd8a9f8ecb9a2df46b</p>
+<p>Utilize as técnicas de análise SNMP no host:172.30.0.103 e informe quais usuários foram encontrados.</p>
+<p>![[131e63d5-70b0-4c4d-949b-0ae7cf82ae09.png]]</p>
+<p>![[66d4941f-5964-42f0-8016-3e22abaf02fa.png]]</p>
+<p><code>**snmpwalk -c Secret -v1 172.30.0.103 1.3.6.1.4.1.77.1.2.25**</code>: Este comando realiza uma caminhada no dispositivo SNMP para obter informações sobre os usuários. Ele especifica a comunidade SNMP "Secret", a versão SNMPv1 e o OID (Object Identifier) 1.3.6.1.4.1.77.1.2.25, que é usado para consultar informações sobre usuários.</p>
+<p>![[Untitled 22.png]]</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
