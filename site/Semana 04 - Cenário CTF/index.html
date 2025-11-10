@@ -363,6 +363,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pacote-ip-dissecacao-byte-a-byte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pacote IP – Dissecação byte-a-byte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-icmp-ascii" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payload ICMP (ASCII)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#chave-extraida" class="md-nav__link">
     <span class="md-ellipsis">
       Chave extraída
@@ -1022,6 +1040,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pacote-ip-dissecacao-byte-a-byte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pacote IP – Dissecação byte-a-byte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload-icmp-ascii" class="md-nav__link">
+    <span class="md-ellipsis">
+      Payload ICMP (ASCII)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#chave-extraida" class="md-nav__link">
     <span class="md-ellipsis">
       Chave extraída
@@ -1134,42 +1170,80 @@ Concatenar os banners e descobrir o socket secreto.</p>
 <p>Dispositivo-alvo ativo: <strong>172.16.1.55:44905</strong></p>
 </blockquote>
 <h3 id="comando-executado">Comando executado</h3>
-<pre><code class="language-bash">nc -vn -w1 172.16.1.55 44905
-````
-
-![](assets/Pasted%20image%2020251101195217.png)
-
-![](assets/Pasted%20image%2020251101195232.png)
-
-### Pacote IP – Dissecação byte-a-byte
-
-| Campo (offset)                           | Hex           | Valor / Interpretação                             |
-| ---------------------------------------- | ------------- | ------------------------------------------------- |
-| **Versão** (0)                           | `45`          | **4** (IPv4)                                      |
-| **Header Length** (0)                    | `45`          | **5** × 4 = **20 bytes**                          |
-| **Explicit Congestion Notification** (1) | `00`          | **0x00** (ECN não utilizado)                      |
-| **Total Length** (2-3)                   | `00 4c`       | **76 bytes**                                      |
-| **Identification** (4-5)                 | `d1 b4`       | **0xd1b4**                                        |
-| **Flags + Fragment Offset** (6-7)        | `40 00`       | Flags: **DF** (Don’t Fragment) setado; Offset = 0 |
-| **TTL** (8)                              | `40`          | **64**                                            |
-| **Protocolo** (9)                        | `01`          | **ICMP**                                          |
-| **Checksum** (10-11)                     | `4e a3`       | **0x4ea3**                                        |
-| **IP Origem** (12-15)                    | `ac 10 01 37` | **172.16.1.55**                                   |
-| **IP Destino** (16-19)                   | `ac 10 01 02` | **172.16.1.2**                                    |
-
-
-### Payload ICMP (ASCII)
-
-
-
-
-![](assets/Pasted%20image%2020251101195901.png)
-
-
-
+<p>nc -vn -w1 172.16.1.55 44905</p>
+<p><img alt="" src="../assets/Pasted%20image%2020251101195217.png" /></p>
+<p><img alt="" src="../assets/Pasted%20image%2020251101195232.png" /></p>
+<h3 id="pacote-ip-dissecacao-byte-a-byte">Pacote IP – Dissecação byte-a-byte</h3>
+<table>
+<thead>
+<tr>
+<th>Campo (offset)</th>
+<th>Hex</th>
+<th>Valor / Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versão</strong> (0)</td>
+<td><code>45</code></td>
+<td><strong>4</strong> (IPv4)</td>
+</tr>
+<tr>
+<td><strong>Header Length</strong> (0)</td>
+<td><code>45</code></td>
+<td><strong>5</strong> × 4 = <strong>20 bytes</strong></td>
+</tr>
+<tr>
+<td><strong>Explicit Congestion Notification</strong> (1)</td>
+<td><code>00</code></td>
+<td><strong>0x00</strong> (ECN não utilizado)</td>
+</tr>
+<tr>
+<td><strong>Total Length</strong> (2-3)</td>
+<td><code>00 4c</code></td>
+<td><strong>76 bytes</strong></td>
+</tr>
+<tr>
+<td><strong>Identification</strong> (4-5)</td>
+<td><code>d1 b4</code></td>
+<td><strong>0xd1b4</strong></td>
+</tr>
+<tr>
+<td><strong>Flags + Fragment Offset</strong> (6-7)</td>
+<td><code>40 00</code></td>
+<td>Flags: <strong>DF</strong> (Don’t Fragment) setado; Offset = 0</td>
+</tr>
+<tr>
+<td><strong>TTL</strong> (8)</td>
+<td><code>40</code></td>
+<td><strong>64</strong></td>
+</tr>
+<tr>
+<td><strong>Protocolo</strong> (9)</td>
+<td><code>01</code></td>
+<td><strong>ICMP</strong></td>
+</tr>
+<tr>
+<td><strong>Checksum</strong> (10-11)</td>
+<td><code>4e a3</code></td>
+<td><strong>0x4ea3</strong></td>
+</tr>
+<tr>
+<td><strong>IP Origem</strong> (12-15)</td>
+<td><code>ac 10 01 37</code></td>
+<td><strong>172.16.1.55</strong></td>
+</tr>
+<tr>
+<td><strong>IP Destino</strong> (16-19)</td>
+<td><code>ac 10 01 02</code></td>
+<td><strong>172.16.1.2</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="payload-icmp-ascii">Payload ICMP (ASCII)</h3>
+<p><img alt="" src="../assets/Pasted%20image%2020251101195901.png" /></p>
+<pre><code>dst http port 80 /malware.txt - KEY:00298417172
 </code></pre>
-<p>dst http port 80 /malware.txt - KEY:00298417172
-```</p>
 <h3 id="chave-extraida">Chave extraída</h3>
 <p><img alt="" src="../assets/Pasted%20image%2020251101200021.png" /></p>
 

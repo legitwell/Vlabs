@@ -1,5 +1,5 @@
 
-```markdown
+
 ## Lab 01 – Portas Abertas
 **Desafio #1 – “Portas Abertas”**  
 - **Lab ID:** `beee791354a71ca0daad919ba87993d7a44f160b`  
@@ -11,13 +11,12 @@ Identificar todas as portas TCP **abertas** no host monitorado.
 ### Procedimento
 1. Abrir o arquivo `monitoramento.pcap` no Wireshark.  
 2. Aplicar o filtro de display:  
-   ```wireshark
+ 
    tcp.flags.syn == 1 && tcp.flags.ack == 1
-```
+
 
 
 ![](assets/Pasted%20image%2020251101193530.png)
-
 3. Anotar os números de porta dos pacotes **SYN-ACK**.
 
 ### Resultado
