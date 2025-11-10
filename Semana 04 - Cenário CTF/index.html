@@ -1067,7 +1067,7 @@ Identificar todas as portas TCP **abertas** no host monitorado.
    ```wireshark
    tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 1
 </code></pre>
-<p>!<img alt="" src="../assets/Pasted%20image%2020251101193530.png" /></p>
+<p><img alt="" src="../assets/Pasted%20image%2020251101193530.png" /></p>
 <ol>
 <li>Anotar os números de porta dos pacotes <strong>SYN-ACK</strong>.</li>
 </ol>
@@ -1087,7 +1087,7 @@ Verificar se alguma das 5 portas descobertas expõe uma chave, coletando banners
      -p 33024,33054,43001,44289,49222 \
      --max-retries 0
 </code></pre>
-<p>!<img alt="" src="../assets/Pasted%20image%2020251101193644.png" /></p>
+<p><img alt="" src="../assets/Pasted%20image%2020251101193644.png" /></p>
 <h3 id="saida-resumida">Saída resumida</h3>
 <table>
 <thead>
@@ -1136,8 +1136,10 @@ Concatenar os banners e descobrir o socket secreto.</p>
 <h3 id="comando-executado">Comando executado</h3>
 <pre><code class="language-bash">nc -vn -w1 172.16.1.55 44905
 ````
-!![](assets/Pasted%20image%2020251101195217.png)
-!![](assets/Pasted%20image%2020251101195232.png)
+
+![](assets/Pasted%20image%2020251101195217.png)
+
+![](assets/Pasted%20image%2020251101195232.png)
 
 ### Pacote IP – Dissecação byte-a-byte
 
@@ -1156,6 +1158,7 @@ Concatenar os banners e descobrir o socket secreto.</p>
 |**IP Destino** (16-19)|`ac 10 01 02`|**172.16.1.2**|
 
 ### Payload ICMP (ASCII)
+
 ![](assets/Pasted%20image%2020251101195901.png)
 !
 
