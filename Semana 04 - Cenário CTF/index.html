@@ -1067,7 +1067,7 @@ Identificar todas as portas TCP **abertas** no host monitorado.
    ```wireshark
    tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 1
 </code></pre>
-<p>![[Pasted image 20251101193530.png]]</p>
+<p>![] (../assets/Pasted image 20251101193530.png)</p>
 <ol>
 <li>Anotar os números de porta dos pacotes <strong>SYN-ACK</strong>.</li>
 </ol>
@@ -1087,7 +1087,7 @@ Verificar se alguma das 5 portas descobertas expõe uma chave, coletando banners
      -p 33024,33054,43001,44289,49222 \
      --max-retries 0
 </code></pre>
-<p>![[Pasted image 20251101193644.png]]</p>
+<p>![] (../assets/Pasted image 20251101193644.png)</p>
 <h3 id="saida-resumida">Saída resumida</h3>
 <table>
 <thead>
@@ -1136,8 +1136,8 @@ Concatenar os banners e descobrir o socket secreto.</p>
 <h3 id="comando-executado">Comando executado</h3>
 <pre><code class="language-bash">nc -vn -w1 172.16.1.55 44905
 ````
-![[Pasted image 20251101195217.png]]
-![[Pasted image 20251101195232.png]]
+![] (../assets/Pasted image 20251101195217.png)
+![] (../assets/Pasted image 20251101195232.png)
 
 ### Pacote IP – Dissecação byte-a-byte
 
@@ -1157,13 +1157,13 @@ Concatenar os banners e descobrir o socket secreto.</p>
 
 ### Payload ICMP (ASCII)
 
-![[Pasted image 20251101195901.png]]
+![] (../assets/Pasted image 20251101195901.png)
 
 </code></pre>
 <p>dst http port 80 /malware.txt - KEY:00298417172
 ```</p>
 <h3 id="chave-extraida">Chave extraída</h3>
-<p>![[Pasted image 20251101200021.png]]</p>
+<p>![] (../assets/Pasted image 20251101200021.png)</p>
 
 
 
