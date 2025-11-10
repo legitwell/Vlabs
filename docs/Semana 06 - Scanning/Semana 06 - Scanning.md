@@ -13,8 +13,8 @@ Para identificar as portas TCP abertas em um site, utilizamos a ferramenta Nmap.
 ==nmap --open www.businesscorp.com.br -p- -Pn==  
 
 **Resultado:**
+![](../assets/Untitled%2019.png)
 
-![[/Untitled 19.png|Untitled 19.png]]
 
 **Explicação:**
 
@@ -47,8 +47,7 @@ Qual a versão do serviço DNS?
 Para determinar a versão do serviço DNS em execução no website [**www.businesscorp.com.br**](http://www.businesscorp.com.br/), utilizamos o utilitário Nmap com os seguintes comandos:
 
 ==nmap -p 53 -sV -Pn www.businesscorp.com.br==  
-
-![[/Untitled 1 2.png|Untitled 1 2.png]]
+![](../assets/Untitled%201%202.png)
 
 Aqui está uma explicação detalhada dos comandos utilizados:
 
@@ -87,8 +86,8 @@ Qual a versão do serviço de transferência de arquivos?
 
 **Resposta:**  
 Para determinar a versão do serviço de transferência de arquivos em execução no website [**www.businesscorp.com.br**](http://www.businesscorp.com.br/), utilizamos o utilitário Nmap com os seguintes comandos:
+![](../assets/Untitled%202%202.png)
 
-![[/Untitled 2 2.png|Untitled 2 2.png]]
 
   
 
@@ -137,8 +136,8 @@ Para realizar um Ping Sweep na rede 172.30.0.0/24, utilizamos o utilitário `**f
 fping -c 1 -g 172.30.0.0/24 > ping1.txt | grep "64 bytes"
 
 ```
+![](../assets/Untitled%203%202.png)
 
-![[/Untitled 3 2.png|Untitled 3 2.png]]
 
 Este comando executa uma varredura de ping na faixa de endereços IP de 172.30.0.1 a 172.30.0.254, enviando apenas um pacote de ping para cada host e redirecionando a saída para um arquivo chamado `**ping1.txt**`.
 
@@ -156,8 +155,8 @@ A saída do comando forneceu uma lista de hosts que responderam ao ping. Contand
 Foram encontrados 22 hosts que responderam ICMP na rede 172.30.0.0/24.
 
 Também foi fornecido outro comando alternativo usando um loop para pings sequenciais em uma faixa de IP e, em seguida, filtrando a saída para exibir apenas as linhas que contêm "64 bytes".
+![](../assets/Untitled%204%202.png)
 
-![[/Untitled 4 2.png|Untitled 4 2.png]]
 
 Ambos os métodos atingem o mesmo resultado de determinar quantos hosts respondem ICMP na rede especificada.
 
@@ -199,8 +198,8 @@ Este comando executa uma varredura de ping em todos os hosts na faixa de endere�
 Em seguida, utilizamos o comando `**grep**` para filtrar a saída e mostrar apenas as linhas que contêm a string "Up", indicando que o host está ativo.
 
   
+![](../assets/Untitled%205%202.png)
 
-![[/Untitled 5 2.png|Untitled 5 2.png]]
 
 Aqui está uma explicação detalhada dos comandos utilizados:
 
@@ -241,8 +240,8 @@ O comando utilizado foi:
 nmap -Pn 172.30.0.0/24 -p445 --open
 
 ```
+![](../assets/Untitled%206%202.png)
 
-![[/Untitled 6 2.png|Untitled 6 2.png]]
 
 Aqui está uma explicação detalhada do comando utilizado:
 
@@ -256,8 +255,8 @@ O resultado da varredura mostrou um host com o endereço IP `**172.30.0.103**` e
 
 **Resposta:**  
 O endereço IP do host com sistema operacional Windows na rede 172.30.0.0/24 é `**172.30.0.103**`.
+![](../assets/Untitled%207%202.png)
 
-![[/Untitled 7 2.png|Untitled 7 2.png]]
 
 ---
 
@@ -285,8 +284,8 @@ Para identificar as portas TCP abertas no host com sistema operacional Windows n
 nmap -sS -p- -Pn 172.30.0.103 --open -T5
 
 ```
+![](../assets/Untitled%208%202.png)
 
-![[/Untitled 8 2.png|Untitled 8 2.png]]
 
 Aqui está uma explicação detalhada do comando utilizado:
 
@@ -336,8 +335,8 @@ nmap -Pn -sS -p25 172.30.0.0/24 --open
 
 	
 ```
+![](../assets/Untitled%209%202.png)
 
-![[/Untitled 9 2.png|Untitled 9 2.png]]
 
 Aqui está uma explicação detalhada do comando utilizado:
 
@@ -376,8 +375,8 @@ Para identificar o nome do serviço de e-mail em execução no host com o endere
 nmap -Pn -sSV -p25 172.30.0.128
 	
 ```
+![](../assets/Untitled%2010%202.png)
 
-![[/Untitled 10 2.png|Untitled 10 2.png]]
 
 Aqui está uma explicação detalhada do comando utilizado:
 
@@ -392,8 +391,8 @@ O resultado da varredura mostrou que o serviço de e-mail em execução no host 
 ## LAB 10
 
 O resultado da varredura mostrou que o serviço de e-mail em execução no host 172.30.0.128 é o "==Postfix smtpd==." Além disso, o nome do host é "==ubuntu==.bloi.com.br."
+![](../assets/Untitled%2010%202.png)
 
-![[/Untitled 10 2.png|Untitled 10 2.png]]
 
 ---
 
@@ -423,8 +422,8 @@ nmap -Pn -sSV -p3306 172.30.0.0/24 --open
 
 	
 ```
+![](../assets/Untitled%2011%202.png)
 
-![[/Untitled 11 2.png|Untitled 11 2.png]]
 
 Aqui está uma explicação detalhada do comando utilizado:
 
@@ -468,8 +467,8 @@ nmap -sSV -Pn 172.30.0.0/24 --open -T5 -p10000
 
 	
 ```
+![](../assets/Untitled%2012%202.png)
 
-![[/Untitled 12 2.png|Untitled 12 2.png]]
 
 Aqui está uma explicação detalhada do comando utilizado:
 

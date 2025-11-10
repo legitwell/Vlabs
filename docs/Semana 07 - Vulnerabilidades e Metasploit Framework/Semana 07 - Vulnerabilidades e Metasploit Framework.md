@@ -16,27 +16,27 @@ Consiga uma shell no host e obtenha a key para pontuar.
     
     - Execute o comando `**nmap -sSV -Pn 172.16.1.100**` para identificar os serviços em execução e as portas abertas no host.
     
-    ![[/Untitled 23.png|Untitled 23.png]]
+    ![](../assets/Untitled%2023.png)
     
 2. **Identificação do serviço HTTP/HTTPS no IPFire:**
     
     - Acesse manualmente os serviços HTTP (porta 81) e HTTPS (porta 444) para investigar possíveis vulnerabilidades.
     - Descubra que o serviço HTTPS não requer autenticação na URL `**https://172.16.1.100:444/cgi-bin/credits.cgi**`, mas não permite interação.
     
-    ![[/Untitled 1 5.png|Untitled 1 5.png]]
+    ![](../assets/Untitled%201%205.png)
     
 3. **Exploração da vulnerabilidade no IPFire com o Metasploit:**
     
     - Inicie o Metasploit com o comando `**msfconsole**`.
     - Pesquise por exploits relacionados ao IPFire com `**search ipfire**` e escolha o exploit `**exploit/linux/http/ipfire_oinkcode_exec**`.
     
-    ![[/Untitled 2 5.png|Untitled 2 5.png]]
+    ![](../assets/Untitled%202%205.png)
     
     - Configure o exploit com `**use exploit/linux/http/ipfire_oinkcode_exec**`.
     - Defina as opções necessárias, como `**RHOST**` (172.16.1.100) e `**SSL**` (true).
     - Execute o exploit com `**exploit**` para tentar explorar a vulnerabilidade no IPFire.
     
-    ![[/Untitled 3 5.png|Untitled 3 5.png]]
+    ![](../assets/Untitled%203%205.png)
     
 4. **Brute force na senha de autenticação HTTP:**
     - Use o módulo `**auxiliary/scanner/http/http_login**` para fazer brute force na senha de autenticação HTTP.
@@ -50,7 +50,7 @@ Consiga uma shell no host e obtenha a key para pontuar.
     - Execute o exploit com `**exploit**` para obter uma shell reversa no host vulnerável.  
         
     
-    ![[/Untitled 4 5.png|Untitled 4 5.png]]
+    ![](../assets/Untitled%204%205.png)
     
 6. **Localização da key do laboratório:**
     
@@ -58,14 +58,15 @@ Consiga uma shell no host e obtenha a key para pontuar.
     - Use o comando `**cat /home/nobody/key.txt**` para exibir o conteúdo do arquivo e obter a resposta do laboratório.  
         
     
-    ![[/Untitled 5 5.png|Untitled 5 5.png]]
+    ![](../assets/Untitled%205%205.png)
     
 7. **Pontuação no laboratório:**
     - Use a key `**key{f1r3wallF@il}**` obtida do arquivo para pontuar no laboratório.
+    - 
+	![](../assets/Untitled%206%204.png)
 
-![[/Untitled 6 4.png|Untitled 6 4.png]]
+	![](../assets/Untitled%207%204.png)
 
-![[/Untitled 7 4.png|Untitled 7 4.png]]
 
 # LAB 02
 
@@ -81,21 +82,21 @@ Consiga uma shell no host e obtenha a informação confidencial para pontuar.
     - Use o Nessus para fazer uma varredura no host 172.16.1.233.
     - Identifique a vulnerabilidade MS17-010 na lista de resultados do Nessus.
         
-        ![[/Untitled 8 4.png|Untitled 8 4.png]]
+        ![](../assets/Untitled%208%204.png)
         
 2. **Busca do script NSE no Nmap:**
     
     - No seu sistema, execute o comando `**grep 'ms17-010' script.db**` para buscar o nome do script NSE relacionado à vulnerabilidade MS17-010.
     - O comando deve retornar algo como `**Entry { filename = "smb-vuln-ms17-010.nse", categories = { "safe", "vuln", } }**`, indicando o nome do arquivo do script NSE.
     
-    ![[/Untitled 9 4.png|Untitled 9 4.png]]
+    ![](../assets/Untitled%209%204.png)
     
 3. **Execução do script NSE no Nmap:**
     
     - Use o Nmap para executar o script `**smb-vuln-ms17-010.nse**` no host 172.16.1.233 com o comando `**nmap --script smb-vuln-ms17-010.nse -Pn 172.16.1.233**`.
     - Verifique se o Nmap identifica o host como vulnerável à MS17-010, fornecendo detalhes sobre a vulnerabilidade.
     
-    ![[/Untitled 10 4.png|Untitled 10 4.png]]
+    ![](../assets/Untitled%2010%204.png)
     
 4. **Análise dos resultados:**
     

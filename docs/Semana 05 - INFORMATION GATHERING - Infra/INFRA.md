@@ -33,7 +33,7 @@ whois 37.59.174.225
 
 ### Evidência (Print do Resultado)
 
-![] (../assets/Pasted image 20251109235432.png)
+![](../assets/Pasted%20image%2020251110023310.png)
 
 
 ---
@@ -70,7 +70,8 @@ whois 37.59.174.225
 
 ### Evidência (Print do Resultado)
 
-![] (../assets/Pasted image 20251109235508.png)
+![](../assets/Pasted%20image%2020251110023416.png)
+
 
 ---
 
@@ -106,7 +107,7 @@ Bash
 
 ### Evidência (Print do Resultado)
 
-![] (../assets/Pasted image 20251109235614.png)
+![](../assets/Pasted%20image%2020251110023453.png)
 
 ---
 
@@ -146,7 +147,7 @@ infrasecreta.businesscorp.com.br 3600    IN  A     37.59.174.225
 
 ### Evidência (Print do Resultado)
 
-![] (../assets/Pasted image 20251109235642.png)
+![](../assets/Pasted%20image%2020251110023505.png)
 
 ---
 
@@ -179,7 +180,8 @@ Bash
 
 ### Evidência (Print do Resultado)
 
-![] (../assets/Pasted image 20251109235700.png)
+![](../assets/Pasted%20image%2020251110023631.png)
+
 
 
 ---
@@ -216,7 +218,7 @@ piloto.businesscorp.com.br     3600    IN  A     37.59.174.230
 
 ### Evidência (Print do Resultado)
 
-![] (../assets/Pasted image 20251109235710.png)
+!![](../assets/Pasted%20image%2020251110023612.png)
 
 
 ---
@@ -252,7 +254,8 @@ businesscorp.com.br          3600    IN  HINFO "SERVIDOR DELL" "DEBIAN - key:098
 
 ### Evidência (Print do Resultado)
 
-![] (../assets/Pasted image 20251109235729.png)
+![](../assets/Pasted%20image%2020251110023729.png)
+
 
 
 ---
@@ -288,7 +291,8 @@ businesscorp.com.br          3600    IN  TXT   "v=spf1 include:key-9283947588214
 
 ### Evidência (Print do Resultado)
 
-![] (../assets/Pasted image 20251109235746.png)
+![](../assets/Pasted%20image%2020251110023802.png)
+
 
 ---
 
@@ -325,4 +329,5 @@ O próprio _destino_ do CNAME continha a key.
 
 ### Evidência (Print do Resultado)
 
-![] (../assets/Pasted image 20251109235814.png)
+![](../assets/Pasted%20image%2020251110023818.png)
+

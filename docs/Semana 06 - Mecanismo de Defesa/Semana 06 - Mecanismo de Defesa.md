@@ -12,8 +12,8 @@ Neste laboratório, o objetivo era identificar portas abertas em um host especí
 
 1. Utilizei o comando `nmap -v -sS --top-ports=10 -Pn 172.16.1.59` para realizar a identificação de portas abertas.
 2. Nesse caso fiz na tentativa e erro até descobrir que era a porta 443
+![](../assets/Untitled%2020.png)
 
-![[/Untitled 20.png|Untitled 20.png]]
 
 Foi utilizado o Nmap para realizar uma varredura de portas no host 172.16.1.59. Os parâmetros usados foram:
 
@@ -38,13 +38,13 @@ Neste laboratório, o objetivo era encontrar uma forma de contornar a segurança
 
 1. Fiz um `nmap -v -sSV --top-ports=100 -Pn -g 443 172.16.1.59`
     
-    ![[/Untitled 1 3.png|Untitled 1 3.png]]
+    ![](../assets/Untitled%201%203.png)
     
 2. Utilizei a porta 443 para estabelecer uma conexão com o host 172.16.1.59.
 3. Após a conexão, enviei um comando GET.
 
-![[/Untitled 2 3.png|Untitled 2 3.png]]
 
+![](../assets/Untitled%202%203.png)
 ### Conclusão
 
 O bypass na porta 443 foi bem-sucedido, permitindo a comunicação com o host.
@@ -65,11 +65,10 @@ Utilizou-se o Netcat (nc) para iniciar uma conexão TCP na porta 443 do host 172
 - **Host Analisado:** [intranet.businesscorp.com.br](http://intranet.businesscorp.com.br/)
 - **Comando Utilizado:** nmap -v -D RND:50 -sS --top-ports=400 -Pn [intranet.businesscorp.com.br](http://intranet.businesscorp.com.br/)
 
-![[/Untitled 3 3.png|Untitled 3 3.png]]
-
+![](../assets/Untitled%203%203.png)
 - **Portas TCP Abertas:** 80, 2222, 10000 **Laboratório 4: Identificação do Sistema Operacional**
+![](../assets/Untitled%204%203.png)
 
-![[/Untitled 4 3.png|Untitled 4 3.png]]
 
 Novamente, foi utilizado o Nmap para realizar uma varredura de portas, desta vez no host intranet.businesscorp.com.br. Os parâmetros utilizados foram:
 
@@ -85,8 +84,7 @@ Novamente, foi utilizado o Nmap para realizar uma varredura de portas, desta vez
 - **Comando Utilizado:** nmap -v -D RND:20 -sSV -p 80,2222,10000 -Pn [intranet.businesscorp.com.br](http://intranet.businesscorp.com.br/)
 - `**-sSV**`: Escaneia todos os portos e realiza detecção de serviço e versão.
 
-![[/Untitled 5 3.png|Untitled 5 3.png]]
-
+![](../assets/Untitled%205%203.png)
 - Sistema operacional encontrado : Debian 4
 - Versão do Serviço Remoto : OpenSSH 6.0p1
 - Serviço de gerenciamento web do servidor : MiniServ 0.01

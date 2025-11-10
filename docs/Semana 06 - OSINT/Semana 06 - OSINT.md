@@ -21,8 +21,8 @@ nmap -Pn -sSV -p- mail.businesscorp.com.br --open -T5
 
 	
 ```
+![](../assets/Untitled.png)
 
-![[Untitled.png]]
 
 Aqui está uma explicação detalhada do comando utilizado:
 
@@ -72,8 +72,8 @@ nmap -Pn -sUV --top-ports=10 mail.businesscorp.com.br --open -T5
 
 	
 ```
+![](../assets/Untitled%201.png)
 
-![[Untitled 1.png]]
 
 Aqui está uma explicação detalhada do comando utilizado:
 
@@ -124,8 +124,8 @@ nc -uv mail.businesscorp.com.br 53
 
 	
 ```
+![](../assets/Untitled%202.png)
 
-![[Untitled 2.png]]
 
 Aqui está uma explicação detalhada do comando utilizado:
 
@@ -174,7 +174,7 @@ Durante a fase de Information Gathering, foi possível identificar um vazamento 
     host -t ns businesscorp.com.br | cut -d " " -f4
     ```
     
-    ![[Untitled 3.png]]
+![](../assets/Untitled%203.png)    
     
       
     
@@ -185,19 +185,19 @@ Durante a fase de Information Gathering, foi possível identificar um vazamento 
     host -l -a businesscorp.com.br ns2.businesscorp.com.br
     ```
     
-    ![[Untitled 4.png]]
+![](../assets/Untitled%204.png)    
     
 
   
 
 1. Acesso ao site do Trello indicado na resposta do laboratório:
 2. ==[**https://trello.com/b/kaqiIGDl/businesscorpcombr**](https://trello.com/b/kaqiIGDl/businesscorpcombr)====.==
+![](../assets/Untitled%205.png)
 
-![[Untitled 5.png]]
 
 1. Acesso ao link do Pastebin contendo as credenciais vazadas: ==[**https://pastebin.com/57J3tLmc**](https://pastebin.com/57J3tLmc)====.==
+![](../assets/Untitled%206.png)
 
-![[Untitled 6.png]]
 
 **Informação Obtida:**
 
@@ -235,10 +235,8 @@ Durante a análise do serviço de e-mail hospedado no host mail.businesscorp.com
     nc -v mail.businesscorp.com.br 110
     	
     ```
-    
-    ![[Untitled 7.png]]
-    
-2. Autenticação no serviço de e-mail com as credenciais obtidas anteriormente:
+    ![](../assets/Untitled%207.png)
+1. Autenticação no serviço de e-mail com as credenciais obtidas anteriormente:
     
     ```Bash
     
@@ -246,39 +244,39 @@ Durante a análise do serviço de e-mail hospedado no host mail.businesscorp.com
     PASS ca123456
     ```
     
-    ![[Untitled 8.png]]
+![](../assets/Untitled%208.png)    
     
-3. Utilização do comando LIST para listar os e-mails disponíveis:
+2. Utilização do comando LIST para listar os e-mails disponíveis:
     
     ```Plain
     
     LIST
     ```
     
-    ![[Untitled 9.png]]
     
-4. Para visualizar o conteúdo do e-mail, foi utilizado o comando RETR seguido do número do e-mail:
+    ![](../assets/Untitled%209.png)
+1. Para visualizar o conteúdo do e-mail, foi utilizado o comando RETR seguido do número do e-mail:
     
     ```Plain
     
     RETR 1
     ```
     
-    ![[Untitled 10.png]]
+![](../assets/Untitled%2010.png)    
     
     O conteúdo do e-mail foi exibido, incluindo informações sobre o remetente, destinatário, assunto e corpo da mensagem.
     
-5. O procedimento foi repetido para outros e-mails, como no caso do comando RETR 2, para obter informações adicionais.
+2. O procedimento foi repetido para outros e-mails, como no caso do comando RETR 2, para obter informações adicionais.
+![](../assets/Untitled%2011.png)
 
-![[Untitled 11.png]]
 
 **Informação Obtida:**
 
 O serviço de e-mail utilizado é o ==**POSTFIX**==, como evidenciado nos cabeçalhos dos e-mails.
 
 Exemplo de cabeçalho do e-mail: ==Received: by== ==[businesscorp.com.br](http://businesscorp.com.br/)== ==(Postfix, from userid 33)==
+![](../assets/Untitled%2012.png)
 
-![[Untitled 12.png]]
 
 Esta é a informação sobre o serviço de e-mail utilizado no host mail.businesscorp.com.br.
 
@@ -306,8 +304,8 @@ O SquirrelMail foi identificado nos cabeçalhos dos e-mails, como no exemplo aba
 
 User-Agent: SquirrelMail/1.4.23 [SVN]
 ```
+![](../assets/Untitled%2013.png)
 
-![[Untitled 13.png]]
 
 Esta é a informação sobre o serviço de webmail utilizado no host mail.businesscorp.com.br.
 
@@ -386,8 +384,8 @@ OSINT VIII
 **Passos Realizados:**
 
 1. Conexão ao serviço de e-mail no host mail.businesscorp.com.br na porta 143 usando o protocolo IMAP:
+    ![](../assets/Untitled%2014.png)
     
-    ![[Untitled 14.png]]
     
     1. `**nc -v mail.businesscorp.com.br 143**`:
         
@@ -438,8 +436,8 @@ OSINT VIII
         
     
     Esses comandos permitem que você se autentique na conta de e-mail, liste as caixas de correio disponíveis, obtenha informações sobre a caixa de correio "Sent", realize uma busca por e-mails enviados por "camila" e, por fim, obtenha o corpo de uma mensagem específica. O conteúdo dessa mensagem contém a ==senha "bj9384221-==", conforme solicitado.
+    ![](../assets/Untitled%2015.png)
     
-    ![[Untitled 15.png]]
     
     ---
     
@@ -470,14 +468,14 @@ OSINT VIII
       
     
     1. Acesse essa URL [mail.businesscorp.com.br](http://mail.businesscorp.com.br/)
+        ![](../assets/Untitled%2016.png)
         
-        ![[Untitled 16.png]]
         
     2. Faça a autenticação  
         Usuario: camila  
         senha: bj9384221
+        ![](../assets/Untitled%2017.png)
         
-        ![[Untitled 17.png]]
         
     
     ---
@@ -490,6 +488,6 @@ OSINT VIII
     
     OSINT XI
     
-      
+    ![](../assets/Untitled%2018.png)  
     
-    ![[Untitled 18.png]]
+    

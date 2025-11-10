@@ -9,7 +9,7 @@
 
 **Pergunta:** Realizar uma coleta de endereços e-mails para o domínio `businesscorp.com.br`.
 
-![] (../assets/Pasted image 20251102194850.png)
+![](../assets/Pasted%20image%2020251102194850.png)
 
 **Resposta:** Para realizar a coleta de e-mails (OSINT), Abri o site e encontrei os 3 emails. 
 
@@ -32,7 +32,8 @@
 site:businesscorp.com.br inurl:senha
 ```
 
-![] (../assets/Pasted image 20251102195320.png)
+!![](../assets/Pasted%20image%2020251102195320.png)
+
 
 
 **Explicação do Comando:**
@@ -75,11 +76,11 @@ senha: b3sac992883
 **Metodologia / URLs Acessadas:**
 
 1. **Análise do `robots.txt`:** `http://businesscorp.com.br/robots.txt`
-2. ![] (../assets/Pasted image 20251102200619.png)
+2. ![](../assets/Pasted%20image%2020251102200619.png)
 
     
 3. **Consulta ao Cache (Wayback Machine):** `http://web.archive.org/web/20191126114209/http://businesscorp.com.br/configuracoes/comunicacao/projeto.txt`
-4. ![] (../assets/Pasted image 20251102200637.png)
+4. ![](../assets/Pasted%20image%2020251102200637.png)
 
     
 
@@ -126,7 +127,7 @@ Bash
 ```
 dig -t axfr businesscorp.com.br @ns2.businesscorp.com.br
 ```
-![] (../assets/Pasted image 20251102201957.png)
+!![](../assets/Pasted%20image%2020251102201957.png)
 
 
 
@@ -149,7 +150,7 @@ DNS Zone file
 trello.businesscorp.com.br. 3600 IN CNAME trello.com/b/bl7wd8HN/businesscorpcombr.
 ```
 
-![] (../assets/Pasted image 20251102202036.png)
+!![](../assets/Pasted%20image%2020251102202036.png)
 
 Ao acessar a URL `https://trello.com/b/bl7wd8HN/businesscorpcombr`, um painel Trello público foi encontrado (primeira imagem). A análise dos _cards_ revelou as seguintes credenciais:
 
@@ -176,7 +177,7 @@ Ao acessar a URL `https://trello.com/b/bl7wd8HN/businesscorpcombr`, um painel Tr
 https://pastebin.com/57J3tLmc
 ```
 
-![] (../assets/Pasted image 20251102202406.png)
+!![](../assets/Pasted%20image%2020251102202406.png)
 
 
 **Explicação da Metodologia:**
@@ -220,7 +221,7 @@ As informações sensíveis encontradas foram:
 site:businesscorp.com.br .doc
 ```
 
-![] (../assets/Pasted image 20251102203039.png)
+![](../assets/Pasted%20image%2020251102203039.png)
 
 
 **Explicação do Comando:**
@@ -256,7 +257,7 @@ Bash
 ```
 exiftool RI.doc
 ```
-![] (../assets/Pasted image 20251102203746.png)
+![](../assets/Pasted%20image%2020251102203746.png)
 
 
 **Explicação do Comando:**
@@ -294,7 +295,7 @@ O nome do colaborador encontrado nos metadados é **Rogerio Severovisk**.
 ```
 https://www.linkedin.com/in/rogerio-severovisk-businesscorp/
 ```
-![] (../assets/Pasted image 20251102204047.png)
+!![](../assets/Pasted%20image%2020251102204047.png)
 
 
 **Explicação da Metodologia:**
@@ -329,7 +330,7 @@ https://www.linkedin.com/in/rogerio-severovisk-businesscorp/
 - Análise de posts no perfil do colaborador.
     
 - URL do Post: `pt.linkedin.com/posts/rogerio-severovisk-businesscorp...` (conforme imagem)
-- ![] (../assets/Pasted image 20251102204221.png)
+- ![](../assets/Pasted%20image%2020251102204221.png)
 - 
     
 
