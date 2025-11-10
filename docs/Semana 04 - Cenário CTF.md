@@ -104,24 +104,29 @@ nc -vn -w1 172.16.1.55 44905
 
 ### Pacote IP – Dissecação byte-a-byte
 
-|Campo (offset)|Hex|Valor / Interpretação|
-|---|---|---|
-|**Versão** (0)|`45`|**4** (IPv4)|
-|**Header Length** (0)|`45`|**5** × 4 = **20 bytes**|
-|**Explicit Congestion Notification** (1)|`00`|**0x00** (ECN não utilizado)|
-|**Total Length** (2-3)|`00 4c`|**76 bytes**|
-|**Identification** (4-5)|`d1 b4`|**0xd1b4**|
-|**Flags + Fragment Offset** (6-7)|`40 00`|Flags: **DF** (Don’t Fragment) setado; Offset = 0|
-|**TTL** (8)|`40`|**64**|
-|**Protocolo** (9)|`01`|**ICMP**|
-|**Checksum** (10-11)|`4e a3`|**0x4ea3**|
-|**IP Origem** (12-15)|`ac 10 01 37`|**172.16.1.55**|
-|**IP Destino** (16-19)|`ac 10 01 02`|**172.16.1.2**|
+| Campo (offset)                           | Hex           | Valor / Interpretação                             |
+| ---------------------------------------- | ------------- | ------------------------------------------------- |
+| **Versão** (0)                           | `45`          | **4** (IPv4)                                      |
+| **Header Length** (0)                    | `45`          | **5** × 4 = **20 bytes**                          |
+| **Explicit Congestion Notification** (1) | `00`          | **0x00** (ECN não utilizado)                      |
+| **Total Length** (2-3)                   | `00 4c`       | **76 bytes**                                      |
+| **Identification** (4-5)                 | `d1 b4`       | **0xd1b4**                                        |
+| **Flags + Fragment Offset** (6-7)        | `40 00`       | Flags: **DF** (Don’t Fragment) setado; Offset = 0 |
+| **TTL** (8)                              | `40`          | **64**                                            |
+| **Protocolo** (9)                        | `01`          | **ICMP**                                          |
+| **Checksum** (10-11)                     | `4e a3`       | **0x4ea3**                                        |
+| **IP Origem** (12-15)                    | `ac 10 01 37` | **172.16.1.55**                                   |
+| **IP Destino** (16-19)                   | `ac 10 01 02` | **172.16.1.2**                                    |
+
 
 ### Payload ICMP (ASCII)
 
+
+
+
 ![](assets/Pasted%20image%2020251101195901.png)
-!
+
+
 
 ```
 dst http port 80 /malware.txt - KEY:00298417172
