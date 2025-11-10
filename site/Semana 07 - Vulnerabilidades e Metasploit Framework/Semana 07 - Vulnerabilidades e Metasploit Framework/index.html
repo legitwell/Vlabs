@@ -703,6 +703,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    LAB 01
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -714,6 +727,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-use-a-key-keyf1r3wallfil-obtida-do-arquivo-para-pontuar-no-laboratorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Use a key **key{f1r3wallF@il}** obtida do arquivo para pontuar no laboratório.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -747,6 +788,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-use-a-key-keyf1r3wallfil-obtida-do-arquivo-para-pontuar-no-laboratorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Use a key **key{f1r3wallF@il}** obtida do arquivo para pontuar no laboratório.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -772,7 +830,7 @@
 <ul>
 <li>Execute o comando <code>**nmap -sSV -Pn 172.16.1.100**</code> para identificar os serviços em execução e as portas abertas no host.</li>
 </ul>
-<p>![[/Untitled 23.png|Untitled 23.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2023.png" /></p>
 </li>
 <li>
 <p><strong>Identificação do serviço HTTP/HTTPS no IPFire:</strong></p>
@@ -780,7 +838,7 @@
 <li>Acesse manualmente os serviços HTTP (porta 81) e HTTPS (porta 444) para investigar possíveis vulnerabilidades.</li>
 <li>Descubra que o serviço HTTPS não requer autenticação na URL <code>**https://172.16.1.100:444/cgi-bin/credits.cgi**</code>, mas não permite interação.</li>
 </ul>
-<p>![[/Untitled 1 5.png|Untitled 1 5.png]]</p>
+<p><img alt="" src="../../assets/Untitled%201%205.png" /></p>
 </li>
 <li>
 <p><strong>Exploração da vulnerabilidade no IPFire com o Metasploit:</strong></p>
@@ -788,13 +846,13 @@
 <li>Inicie o Metasploit com o comando <code>**msfconsole**</code>.</li>
 <li>Pesquise por exploits relacionados ao IPFire com <code>**search ipfire**</code> e escolha o exploit <code>**exploit/linux/http/ipfire_oinkcode_exec**</code>.</li>
 </ul>
-<p>![[/Untitled 2 5.png|Untitled 2 5.png]]</p>
+<p><img alt="" src="../../assets/Untitled%202%205.png" /></p>
 <ul>
 <li>Configure o exploit com <code>**use exploit/linux/http/ipfire_oinkcode_exec**</code>.</li>
 <li>Defina as opções necessárias, como <code>**RHOST**</code> (172.16.1.100) e <code>**SSL**</code> (true).</li>
 <li>Execute o exploit com <code>**exploit**</code> para tentar explorar a vulnerabilidade no IPFire.</li>
 </ul>
-<p>![[/Untitled 3 5.png|Untitled 3 5.png]]</p>
+<p><img alt="" src="../../assets/Untitled%203%205.png" /></p>
 </li>
 <li>
 <p><strong>Brute force na senha de autenticação HTTP:</strong></p>
@@ -814,7 +872,7 @@
 <li>Configure as opções <code>**LHOST**</code> (IP da sua máquina) e <code>**LPORT**</code> (porta para conectar) com o seu endereço IP e uma porta disponível.</li>
 <li>Execute o exploit com <code>**exploit**</code> para obter uma shell reversa no host vulnerável.  </li>
 </ul>
-<p>![[/Untitled 4 5.png|Untitled 4 5.png]]</p>
+<p><img alt="" src="../../assets/Untitled%204%205.png" /></p>
 </li>
 <li>
 <p><strong>Localização da key do laboratório:</strong></p>
@@ -822,17 +880,15 @@
 <li>Após obter a shell reversa, navegue pelo sistema de arquivos com comandos como <code>**pwd**</code>, <code>**ls**</code>, <code>**cd**</code>, e <code>**cat**</code> para encontrar o arquivo da key.</li>
 <li>Use o comando <code>**cat /home/nobody/key.txt**</code> para exibir o conteúdo do arquivo e obter a resposta do laboratório.  </li>
 </ul>
-<p>![[/Untitled 5 5.png|Untitled 5 5.png]]</p>
+<p><img alt="" src="../../assets/Untitled%205%205.png" /></p>
 </li>
 <li>
 <p><strong>Pontuação no laboratório:</strong></p>
-<ul>
-<li>Use a key <code>**key{f1r3wallF@il}**</code> obtida do arquivo para pontuar no laboratório.</li>
-</ul>
+<h2 id="-use-a-key-keyf1r3wallfil-obtida-do-arquivo-para-pontuar-no-laboratorio">- Use a key <code>**key{f1r3wallF@il}**</code> obtida do arquivo para pontuar no laboratório.</h2>
+<p><img alt="" src="../../assets/Untitled%206%204.png" /></p>
+<p><img alt="" src="../../assets/Untitled%207%204.png" /></p>
 </li>
 </ol>
-<p>![[/Untitled 6 4.png|Untitled 6 4.png]]</p>
-<p>![[/Untitled 7 4.png|Untitled 7 4.png]]</p>
 <h1 id="lab-02">LAB 02</h1>
 <p><strong>Host II</strong></p>
 <p>Lab ID: bff9293a1e74ee87ed773766f6f85feace4ceedb</p>
@@ -845,7 +901,7 @@
 <li>Use o Nessus para fazer uma varredura no host 172.16.1.233.</li>
 <li>
 <p>Identifique a vulnerabilidade MS17-010 na lista de resultados do Nessus.</p>
-<p>![[/Untitled 8 4.png|Untitled 8 4.png]]</p>
+<p><img alt="" src="../../assets/Untitled%208%204.png" /></p>
 </li>
 </ul>
 </li>
@@ -855,7 +911,7 @@
 <li>No seu sistema, execute o comando <code>**grep 'ms17-010' script.db**</code> para buscar o nome do script NSE relacionado à vulnerabilidade MS17-010.</li>
 <li>O comando deve retornar algo como <code>**Entry { filename = "smb-vuln-ms17-010.nse", categories = { "safe", "vuln", } }**</code>, indicando o nome do arquivo do script NSE.</li>
 </ul>
-<p>![[/Untitled 9 4.png|Untitled 9 4.png]]</p>
+<p><img alt="" src="../../assets/Untitled%209%204.png" /></p>
 </li>
 <li>
 <p><strong>Execução do script NSE no Nmap:</strong></p>
@@ -863,7 +919,7 @@
 <li>Use o Nmap para executar o script <code>**smb-vuln-ms17-010.nse**</code> no host 172.16.1.233 com o comando <code>**nmap --script smb-vuln-ms17-010.nse -Pn 172.16.1.233**</code>.</li>
 <li>Verifique se o Nmap identifica o host como vulnerável à MS17-010, fornecendo detalhes sobre a vulnerabilidade.</li>
 </ul>
-<p>![[/Untitled 10 4.png|Untitled 10 4.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2010%204.png" /></p>
 </li>
 <li>
 <p><strong>Análise dos resultados:</strong></p>

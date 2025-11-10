@@ -776,7 +776,7 @@ nmap -Pn -sSV -p- mail.businesscorp.com.br --open -T5
 
 
 </code></pre>
-<p>![[Untitled.png]]</p>
+<p><img alt="" src="../../assets/Untitled.png" /></p>
 <p>Aqui está uma explicação detalhada do comando utilizado:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
@@ -809,7 +809,7 @@ nmap -Pn -sUV --top-ports=10 mail.businesscorp.com.br --open -T5
 
 
 </code></pre>
-<p>![[Untitled 1.png]]</p>
+<p><img alt="" src="../../assets/Untitled%201.png" /></p>
 <p>Aqui está uma explicação detalhada do comando utilizado:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
@@ -843,7 +843,7 @@ nc -uv mail.businesscorp.com.br 53
 
 
 </code></pre>
-<p>![[Untitled 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%202.png" /></p>
 <p>Aqui está uma explicação detalhada do comando utilizado:</p>
 <ul>
 <li><code>**nc**</code>: Este é o comando utilizado para iniciar a ferramenta de conexão de rede.</li>
@@ -874,25 +874,29 @@ DESEC DNS SERVER 901238127-1281321-d192919
 <p>```Shell</p>
 <p>host -t ns businesscorp.com.br | cut -d " " -f4
 ```</p>
-<p>![[Untitled 3.png]]</p>
 </li>
+</ol>
+<p><img alt="" src="../../assets/Untitled%203.png" />    </p>
+<ol>
 <li>
 <p>Realização de uma transferência de zona (AXFR) para obter informações sobre os registros do domínio:</p>
 <p>```Bash</p>
 <p>host -l -a businesscorp.com.br ns2.businesscorp.com.br
 ```</p>
-<p>![[Untitled 4.png]]</p>
+</li>
+</ol>
+<p><img alt="" src="../../assets/Untitled%204.png" />    </p>
+<ol>
+<li>Acesso ao site do Trello indicado na resposta do laboratório:</li>
+<li>
+<p>==<a href="https://trello.com/b/kaqiIGDl/businesscorpcombr"><strong>https://trello.com/b/kaqiIGDl/businesscorpcombr</strong></a>====.==
+<img alt="" src="../../assets/Untitled%205.png" /></p>
 </li>
 <li>
-<p>Acesso ao site do Trello indicado na resposta do laboratório:</p>
+<p>Acesso ao link do Pastebin contendo as credenciais vazadas: ==<a href="https://pastebin.com/57J3tLmc"><strong>https://pastebin.com/57J3tLmc</strong></a>====.==
+<img alt="" src="../../assets/Untitled%206.png" /></p>
 </li>
-<li>==<a href="https://trello.com/b/kaqiIGDl/businesscorpcombr"><strong>https://trello.com/b/kaqiIGDl/businesscorpcombr</strong></a>====.==</li>
 </ol>
-<p>![[Untitled 5.png]]</p>
-<ol>
-<li>Acesso ao link do Pastebin contendo as credenciais vazadas: ==<a href="https://pastebin.com/57J3tLmc"><strong>https://pastebin.com/57J3tLmc</strong></a>====.==</li>
-</ol>
-<p>![[Untitled 6.png]]</p>
 <p><strong>Informação Obtida:</strong></p>
 <ul>
 <li>==<strong>Usuário:</strong>== ==camila==</li>
@@ -914,41 +918,40 @@ DESEC DNS SERVER 901238127-1281321-d192919
 <p>Conexão ao serviço de e-mail no host mail.businesscorp.com.br na porta 110 usando o protocolo POP3:</p>
 <p>```Plain</p>
 <p>nc -v mail.businesscorp.com.br 110</p>
-<p>```</p>
-<p>![[Untitled 7.png]]</p>
-</li>
-<li>
-<p>Autenticação no serviço de e-mail com as credenciais obtidas anteriormente:</p>
+<p>```
+<img alt="" src="../../assets/Untitled%207.png" />
+1. Autenticação no serviço de e-mail com as credenciais obtidas anteriormente:</p>
 <p>```Bash</p>
 <p>USER camila
 PASS ca123456
 ```</p>
-<p>![[Untitled 8.png]]</p>
 </li>
+</ol>
+<p><img alt="" src="../../assets/Untitled%208.png" />    </p>
+<ol>
 <li>
 <p>Utilização do comando LIST para listar os e-mails disponíveis:</p>
 <p>```Plain</p>
 <p>LIST
 ```</p>
-<p>![[Untitled 9.png]]</p>
-</li>
-<li>
-<p>Para visualizar o conteúdo do e-mail, foi utilizado o comando RETR seguido do número do e-mail:</p>
+<p><img alt="" src="../../assets/Untitled%209.png" />
+1. Para visualizar o conteúdo do e-mail, foi utilizado o comando RETR seguido do número do e-mail:</p>
 <p>```Plain</p>
 <p>RETR 1
 ```</p>
-<p>![[Untitled 10.png]]</p>
-<p>O conteúdo do e-mail foi exibido, incluindo informações sobre o remetente, destinatário, assunto e corpo da mensagem.</p>
-</li>
-<li>
-<p>O procedimento foi repetido para outros e-mails, como no caso do comando RETR 2, para obter informações adicionais.</p>
 </li>
 </ol>
-<p>![[Untitled 11.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2010.png" />    </p>
+<pre><code>O conteúdo do e-mail foi exibido, incluindo informações sobre o remetente, destinatário, assunto e corpo da mensagem.
+</code></pre>
+<ol>
+<li>O procedimento foi repetido para outros e-mails, como no caso do comando RETR 2, para obter informações adicionais.
+<img alt="" src="../../assets/Untitled%2011.png" /></li>
+</ol>
 <p><strong>Informação Obtida:</strong></p>
 <p>O serviço de e-mail utilizado é o ==<strong>POSTFIX</strong>==, como evidenciado nos cabeçalhos dos e-mails.</p>
-<p>Exemplo de cabeçalho do e-mail: ==Received: by== ==<a href="http://businesscorp.com.br/">businesscorp.com.br</a>== ==(Postfix, from userid 33)==</p>
-<p>![[Untitled 12.png]]</p>
+<p>Exemplo de cabeçalho do e-mail: ==Received: by== ==<a href="http://businesscorp.com.br/">businesscorp.com.br</a>== ==(Postfix, from userid 33)==
+<img alt="" src="../../assets/Untitled%2012.png" /></p>
 <p>Esta é a informação sobre o serviço de e-mail utilizado no host mail.businesscorp.com.br.</p>
 <hr />
 <h1 id="lab-06">LAB 06</h1>
@@ -962,7 +965,7 @@ PASS ca123456
 <pre><code class="language-Makefile">
 User-Agent: SquirrelMail/1.4.23 [SVN]
 </code></pre>
-<p>![[Untitled 13.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2013.png" /></p>
 <p>Esta é a informação sobre o serviço de webmail utilizado no host mail.businesscorp.com.br.</p>
 <h3 id="lab-7">LAB 7</h3>
 <p>Lab ID: d6122d2498ed54e03ed511ba3765be726cb8dfce</p>
@@ -999,8 +1002,8 @@ User-Agent: SquirrelMail/1.4.23 [SVN]
 <p><strong>Passos Realizados:</strong></p>
 <ol>
 <li>
-<p>Conexão ao serviço de e-mail no host mail.businesscorp.com.br na porta 143 usando o protocolo IMAP:</p>
-<p>![[Untitled 14.png]]</p>
+<p>Conexão ao serviço de e-mail no host mail.businesscorp.com.br na porta 143 usando o protocolo IMAP:
+    <img alt="" src="../../assets/Untitled%2014.png" /></p>
 <ol>
 <li>
 <p><code>**nc -v mail.businesscorp.com.br 143**</code>:</p>
@@ -1056,8 +1059,8 @@ User-Agent: SquirrelMail/1.4.23 [SVN]
 <p><strong>Explicação</strong>: Com este comando, estamos recuperando o corpo da segunda mensagem na caixa de correio.</p>
 </li>
 </ol>
-<p>Esses comandos permitem que você se autentique na conta de e-mail, liste as caixas de correio disponíveis, obtenha informações sobre a caixa de correio "Sent", realize uma busca por e-mails enviados por "camila" e, por fim, obtenha o corpo de uma mensagem específica. O conteúdo dessa mensagem contém a ==senha "bj9384221-==", conforme solicitado.</p>
-<p>![[Untitled 15.png]]</p>
+<p>Esses comandos permitem que você se autentique na conta de e-mail, liste as caixas de correio disponíveis, obtenha informações sobre a caixa de correio "Sent", realize uma busca por e-mails enviados por "camila" e, por fim, obtenha o corpo de uma mensagem específica. O conteúdo dessa mensagem contém a ==senha "bj9384221-==", conforme solicitado.
+<img alt="" src="../../assets/Untitled%2015.png" /></p>
 <hr />
 <h1 id="lab-12">LAB 12</h1>
 <p>Lab ID: dbfc1186829c76cc4fd0791c854a4be479cc846b</p>
@@ -1071,21 +1074,21 @@ User-Agent: SquirrelMail/1.4.23 [SVN]
 <p>OSINT X</p>
 <ol>
 <li>
-<p>Acesse essa URL <a href="http://mail.businesscorp.com.br/">mail.businesscorp.com.br</a></p>
-<p>![[Untitled 16.png]]</p>
+<p>Acesse essa URL <a href="http://mail.businesscorp.com.br/">mail.businesscorp.com.br</a>
+    <img alt="" src="../../assets/Untitled%2016.png" /></p>
 </li>
 <li>
 <p>Faça a autenticação<br />
     Usuario: camila<br />
-    senha: bj9384221</p>
-<p>![[Untitled 17.png]]</p>
+    senha: bj9384221
+    <img alt="" src="../../assets/Untitled%2017.png" /></p>
 </li>
 </ol>
 <hr />
 <h1 id="lab-14">LAB 14</h1>
 <p>Lab ID: 2a609e861ddb928e22e19a2f70b83c936124f2f5</p>
 <p>OSINT XI</p>
-<p>![[Untitled 18.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2018.png" />  </p>
 </li>
 </ol>
 
