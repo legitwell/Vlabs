@@ -94,11 +94,14 @@ id: `cd15eea6c2342839a83f4f08351e864fd8932f3f`
 > Dispositivo-alvo ativo: **172.16.1.55:44905**
 
 ### Comando executado
-```bash
+
 nc -vn -w1 172.16.1.55 44905
-````
+
+
 
 ![](assets/Pasted%20image%2020251101195217.png)
+
+
 
 ![](assets/Pasted%20image%2020251101195232.png)
 
