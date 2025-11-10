@@ -769,8 +769,8 @@
 <p><strong>Pergunta: Quais portas TCP estão abertas?</strong></p>
 <p>Para identificar as portas TCP abertas em um site, utilizamos a ferramenta Nmap. Abaixo está o comando utilizado e o resultado obtido:</p>
 <p>==nmap --open www.businesscorp.com.br -p- -Pn==  </p>
-<p><strong>Resultado:</strong></p>
-<p>![[/Untitled 19.png|Untitled 19.png]]</p>
+<p><strong>Resultado:</strong>
+<img alt="" src="../../assets/Untitled%2019.png" /></p>
 <p><strong>Explicação:</strong></p>
 <ul>
 <li>O comando <code>**nmap**</code> é uma ferramenta de escaneamento de rede utilizada para descobrir hosts e serviços em uma rede.</li>
@@ -788,8 +788,8 @@
 Qual a versão do serviço DNS?</p>
 <p><strong>Resposta:</strong><br />
 Para determinar a versão do serviço DNS em execução no website <a href="http://www.businesscorp.com.br/"><strong>www.businesscorp.com.br</strong></a>, utilizamos o utilitário Nmap com os seguintes comandos:</p>
-<p>==nmap -p 53 -sV -Pn www.businesscorp.com.br==  </p>
-<p>![[/Untitled 1 2.png|Untitled 1 2.png]]</p>
+<p>==nmap -p 53 -sV -Pn www.businesscorp.com.br==<br />
+<img alt="" src="../../assets/Untitled%201%202.png" /></p>
 <p>Aqui está uma explicação detalhada dos comandos utilizados:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar a ferramenta Nmap, que é amplamente utilizada para escanear e mapear redes, identificando hosts e serviços em execução.</li>
@@ -811,8 +811,8 @@ PORT   STATE SERVICE VERSION
 <p><strong>Pergunta:</strong><br />
 Qual a versão do serviço de transferência de arquivos?</p>
 <p><strong>Resposta:</strong><br />
-Para determinar a versão do serviço de transferência de arquivos em execução no website <a href="http://www.businesscorp.com.br/"><strong>www.businesscorp.com.br</strong></a>, utilizamos o utilitário Nmap com os seguintes comandos:</p>
-<p>![[/Untitled 2 2.png|Untitled 2 2.png]]</p>
+Para determinar a versão do serviço de transferência de arquivos em execução no website <a href="http://www.businesscorp.com.br/"><strong>www.businesscorp.com.br</strong></a>, utilizamos o utilitário Nmap com os seguintes comandos:
+<img alt="" src="../../assets/Untitled%202%202.png" /></p>
 <p>Aqui está uma explicação detalhada dos comandos utilizados:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar a ferramenta Nmap, que é amplamente utilizada para escanear e mapear redes, identificando hosts e serviços em execução.</li>
@@ -840,7 +840,7 @@ Quantos hosts respondem ICMP?</p>
 fping -c 1 -g 172.30.0.0/24 &gt; ping1.txt | grep &quot;64 bytes&quot;
 
 </code></pre>
-<p>![[/Untitled 3 2.png|Untitled 3 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%203%202.png" /></p>
 <p>Este comando executa uma varredura de ping na faixa de endereços IP de 172.30.0.1 a 172.30.0.254, enviando apenas um pacote de ping para cada host e redirecionando a saída para um arquivo chamado <code>**ping1.txt**</code>.</p>
 <p>Aqui está uma explicação detalhada dos comandos utilizados:</p>
 <ul>
@@ -853,8 +853,8 @@ fping -c 1 -g 172.30.0.0/24 &gt; ping1.txt | grep &quot;64 bytes&quot;
 <p>A saída do comando forneceu uma lista de hosts que responderam ao ping. Contando as linhas, podemos determinar quantos hosts responderam ICMP.</p>
 <p><strong>Resposta:</strong><br />
 Foram encontrados 22 hosts que responderam ICMP na rede 172.30.0.0/24.</p>
-<p>Também foi fornecido outro comando alternativo usando um loop para pings sequenciais em uma faixa de IP e, em seguida, filtrando a saída para exibir apenas as linhas que contêm "64 bytes".</p>
-<p>![[/Untitled 4 2.png|Untitled 4 2.png]]</p>
+<p>Também foi fornecido outro comando alternativo usando um loop para pings sequenciais em uma faixa de IP e, em seguida, filtrando a saída para exibir apenas as linhas que contêm "64 bytes".
+<img alt="" src="../../assets/Untitled%204%202.png" /></p>
 <p>Ambos os métodos atingem o mesmo resultado de determinar quantos hosts respondem ICMP na rede especificada.</p>
 <blockquote>
 <p>[!important] Pode ser feito um loop com o</p>
@@ -875,7 +875,7 @@ nmap -v -sn 172.30.0.0/24 -oG ativos.txt
 </code></pre>
 <p>Este comando executa uma varredura de ping em todos os hosts na faixa de endereços IP de 172.30.0.1 a 172.30.0.254 e salva os resultados no arquivo <code>**ativos.txt**</code>.</p>
 <p>Em seguida, utilizamos o comando <code>**grep**</code> para filtrar a saída e mostrar apenas as linhas que contêm a string "Up", indicando que o host está ativo.</p>
-<p>![[/Untitled 5 2.png|Untitled 5 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%205%202.png" /></p>
 <p>Aqui está uma explicação detalhada dos comandos utilizados:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
@@ -899,7 +899,7 @@ Qual o endereço IP do host com sistema operacional Windows?</p>
 nmap -Pn 172.30.0.0/24 -p445 --open
 
 </code></pre>
-<p>![[/Untitled 6 2.png|Untitled 6 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%206%202.png" /></p>
 <p>Aqui está uma explicação detalhada do comando utilizado:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
@@ -910,8 +910,8 @@ nmap -Pn 172.30.0.0/24 -p445 --open
 </ul>
 <p>O resultado da varredura mostrou um host com o endereço IP <code>**172.30.0.103**</code> e a porta <code>**445/tcp**</code> aberta. Isso indica que este host está executando um serviço de compartilhamento de arquivos do Windows.</p>
 <p><strong>Resposta:</strong><br />
-O endereço IP do host com sistema operacional Windows na rede 172.30.0.0/24 é <code>**172.30.0.103**</code>.</p>
-<p>![[/Untitled 7 2.png|Untitled 7 2.png]]</p>
+O endereço IP do host com sistema operacional Windows na rede 172.30.0.0/24 é <code>**172.30.0.103**</code>.
+<img alt="" src="../../assets/Untitled%207%202.png" /></p>
 <hr />
 <h1 id="lab-07">LAB 07</h1>
 <p><strong>Lab ID:</strong> 1024755034671ec020b56260e1a4f2dc1049c8c7</p>
@@ -924,7 +924,7 @@ Quais portas TCP estão abertas no host com sistema operacional Windows?</p>
 nmap -sS -p- -Pn 172.30.0.103 --open -T5
 
 </code></pre>
-<p>![[/Untitled 8 2.png|Untitled 8 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%208%202.png" /></p>
 <p>Aqui está uma explicação detalhada do comando utilizado:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
@@ -958,7 +958,7 @@ nmap -Pn -sS -p25 172.30.0.0/24 --open
 
 
 </code></pre>
-<p>![[/Untitled 9 2.png|Untitled 9 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%209%202.png" /></p>
 <p>Aqui está uma explicação detalhada do comando utilizado:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
@@ -981,7 +981,7 @@ Qual o nome do serviço de e-mail em execução no host encontrado anteriormente
 nmap -Pn -sSV -p25 172.30.0.128
 
 </code></pre>
-<p>![[/Untitled 10 2.png|Untitled 10 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2010%202.png" /></p>
 <p>Aqui está uma explicação detalhada do comando utilizado:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
@@ -992,8 +992,8 @@ nmap -Pn -sSV -p25 172.30.0.128
 </ul>
 <p>O resultado da varredura mostrou que o serviço de e-mail em execução no host 172.30.0.128 é o "==Postfix smtpd==." Além disso, o nome do host é "ubuntu.bloi.com.br."</p>
 <h2 id="lab-10">LAB 10</h2>
-<p>O resultado da varredura mostrou que o serviço de e-mail em execução no host 172.30.0.128 é o "==Postfix smtpd==." Além disso, o nome do host é "==ubuntu==.bloi.com.br."</p>
-<p>![[/Untitled 10 2.png|Untitled 10 2.png]]</p>
+<p>O resultado da varredura mostrou que o serviço de e-mail em execução no host 172.30.0.128 é o "==Postfix smtpd==." Além disso, o nome do host é "==ubuntu==.bloi.com.br."
+<img alt="" src="../../assets/Untitled%2010%202.png" /></p>
 <hr />
 <h1 id="lab-11">LAB 11</h1>
 <p><strong>Lab ID:</strong> a32cd6136cb730483107a3ff4987339dc1ccc4d7</p>
@@ -1007,7 +1007,7 @@ nmap -Pn -sSV -p3306 172.30.0.0/24 --open
 
 
 </code></pre>
-<p>![[/Untitled 11 2.png|Untitled 11 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2011%202.png" /></p>
 <p>Aqui está uma explicação detalhada do comando utilizado:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
@@ -1034,7 +1034,7 @@ nmap -sSV -Pn 172.30.0.0/24 --open -T5 -p10000
 
 
 </code></pre>
-<p>![[/Untitled 12 2.png|Untitled 12 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2012%202.png" /></p>
 <p>Aqui está uma explicação detalhada do comando utilizado:</p>
 <ul>
 <li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>

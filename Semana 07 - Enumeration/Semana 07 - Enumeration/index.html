@@ -771,13 +771,13 @@
 <p>Resposta : 172.16.1.33</p>
 <pre><code class="language-CSS">nmap -p 3306 172.16.1.1-100 --open
 </code></pre>
-<p>![[/Untitled 21.png|Untitled 21.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2021.png" /></p>
 <h1 id="lab-2">LAB 2</h1>
 <p><strong>Database</strong></p>
 <p>Lab ID: 5ea4aabba6c8aee74471553be462fc7cca14777a</p>
 <p>Qual a versão do MySQL no Host encontrado anteriormente?</p>
-<p>Resposta : 5.1.73-1</p>
-<p>![[/Untitled 1 4.png|Untitled 1 4.png]]</p>
+<p>Resposta : 5.1.73-1
+<img alt="" src="../../assets/Untitled%201%204.png" /></p>
 <p>Esse comando é usado para se conectar a um servidor MySQL hospedado no IP 172.16.1.33 usando o usuário "root". Aqui está a explicação detalhada do comando:</p>
 <ul>
 <li><code>**mysql**</code>: É o programa cliente do MySQL usado para se conectar ao servidor MySQL.</li>
@@ -790,7 +790,7 @@
 <p><strong>Database</strong></p>
 <p>Lab ID: a25ed3540040e482db1e1ad25e85bacad572c9e4</p>
 <p>Realize a enumeração no MySQL do host encontrado anteriormente e consiga a key no banco de dados encontrado.</p>
-<p>![[/Untitled 2 4.png|Untitled 2 4.png]]</p>
+<p><img alt="" src="../../assets/Untitled%202%204.png" /></p>
 <p>Para obter a key no banco de dados <code>**vlab**</code> do host MySQL 172.16.1.33, você fez a enumeração corretamente. Aqui está o passo a passo simplificado:</p>
 <ol>
 <li>
@@ -826,13 +826,13 @@ SELECT * FROM ativa;</code></p>
 <p>Neste mesmo host analisado anteriormente existe um serviço de SSH.</p>
 <p>Quais os métodos de autenticação aceitos no serviço de SSH?</p>
 <p>Resposta : publickey,password</p>
-<p>![[/Untitled 3 4.png|Untitled 3 4.png]]</p>
+<p><img alt="" src="../../assets/Untitled%203%204.png" /></p>
 <p>O erro <strong>"no matching host key type found"</strong> indica que o cliente SSH não conseguiu encontrar um tipo de chave de host compatível com o oferecido pelo servidor SSH no host 172.16.1.33. Isso geralmente ocorre quando o servidor SSH oferece tipos de chave de host que não são suportados pelo cliente SSH.</p>
 <h1 id="lab-05">LAB 05</h1>
 <p><strong>NFS - PARTE I</strong></p>
 <p>Lab ID: 2ba03ce463bc0a07c288203bd7060ad074db19fd</p>
 <p>Explore o serviço de NFS do servidor 172.16.1.31 e consiga a key.</p>
-<p>![[/Untitled 4 4.png|Untitled 4 4.png]]</p>
+<p><img alt="" src="../../assets/Untitled%204%204.png" /></p>
 <ol>
 <li><strong>Identificar o serviço NFS</strong>: O comando <code>**rpcinfo -p 172.16.1.31 | grep nfs**</code> é usado para listar os serviços RPC (Remote Procedure Call) disponíveis no servidor 172.16.1.31 e filtrar apenas as entradas relacionadas ao NFS (Network File System). Isso nos permite identificar que o NFS está sendo executado na porta 2049.</li>
 <li><strong>Verificar os diretórios compartilhados</strong>: O comando <code>**showmount -e 172.16.1.31**</code> é usado para listar os diretórios compartilhados disponíveis no servidor NFS (172.16.1.31). Ele nos informa que o diretório <code>**/home/camila**</code> está sendo compartilhado.</li>
@@ -853,14 +853,14 @@ SELECT * FROM ativa;</code></p>
 <ul>
 <li>Execute o comando <code>**ssh-keygen -t rsa**</code> para gerar uma chave SSH. Isso criará um par de chaves pública e privada.</li>
 </ul>
-<p>![[/Untitled 5 4.png|Untitled 5 4.png]]</p>
+<p><img alt="" src="../../assets/Untitled%205%204.png" /></p>
 </li>
 <li>
 <p><strong>Montar o diretório NFS:</strong></p>
 <ul>
 <li>Utilize o comando <code>**mount -t nfs -o nfvers=3 172.16.1.31:/home/camila /home/nfs**</code> para montar o diretório NFS remoto em sua máquina local.</li>
 </ul>
-<p>![[/Untitled 6 3.png|Untitled 6 3.png]]</p>
+<p><img alt="" src="../../assets/Untitled%206%203.png" /></p>
 </li>
 <li>
 <p><strong>Acessar a pasta SSH e adicionar a chave pública:</strong></p>
@@ -868,24 +868,24 @@ SELECT * FROM ativa;</code></p>
 <li>Navegue até a pasta <code>**~/.ssh/**</code> em seu sistema local.</li>
 <li>Abra o arquivo <code>**authorized_keys**</code> e insira a chave pública gerada na etapa 1.</li>
 </ul>
-<p>![[/Untitled 7 3.png|Untitled 7 3.png]]</p>
+<p><img alt="" src="../../assets/Untitled%207%203.png" /></p>
 </li>
 </ol>
-<p>![[/Untitled 8 3.png|Untitled 8 3.png]]</p>
+<p><img alt="" src="../../assets/Untitled%208%203.png" /></p>
 <ol>
 <li>
 <p><strong>Conectar-se ao servidor SSH:</strong></p>
 <ul>
-<li>Use o comando <code>**ssh camila@172.16.1.31 -i id_rsa -o HostKeyAlgorithms=+ssh-dss -o PubkeyAcceptedAlgorithms=+ssh-rsa**</code> para se conectar ao servidor SSH. Substitua <code>**id_rsa**</code> pelo caminho da sua chave privada.</li>
+<li>Use o comando <code>**ssh camila@172.16.1.31 -i id_rsa -o HostKeyAlgorithms=+ssh-dss -o PubkeyAcceptedAlgorithms=+ssh-rsa**</code> para se conectar ao servidor SSH. Substitua <code>**id_rsa**</code> pelo caminho da sua chave privada.
+<img alt="" src="../../assets/8f07c411-8a6d-4cd0-8bae-142e364176d0.png" /></li>
 </ul>
-<p>![[8f07c411-8a6d-4cd0-8bae-142e364176d0.png]]</p>
 </li>
 <li>
 <p><strong>Explorar o sistema de arquivos:</strong></p>
 <ul>
 <li>Após se conectar, use o comando <code>**pwd**</code> para verificar o diretório atual.</li>
 </ul>
-<p>![[/Untitled 9 3.png|Untitled 9 3.png]]</p>
+<p><img alt="" src="../../assets/Untitled%209%203.png" /></p>
 <ul>
 <li>Use <code>**cd ../..**</code> para voltar à pasta raiz.</li>
 <li>Procure pelo arquivo <code>**key.txt**</code> usando <code>**ls -la**</code> para listar todos os arquivos, incluindo os ocultos.</li>
@@ -896,7 +896,7 @@ SELECT * FROM ativa;</code></p>
 <p>Abra o arquivo <code>**key.txt**</code> encontrado no passo anterior para encontrar a resposta do VLAB, que é <code>**999675754423**</code>.</p>
 </li>
 </ul>
-<p>![[/Untitled 10 3.png|Untitled 10 3.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2010%203.png" /></p>
 </li>
 </ol>
 <p>Certifique-se de substituir os caminhos e nomes de arquivos conforme necessário para corresponder à sua configuração específica.</p>
@@ -906,43 +906,43 @@ SELECT * FROM ativa;</code></p>
 <p>ID do laboratório: 8b6f2fe04ee2f74dccc93bd2dcb0fc9d205277f8</p>
 <p>ID do laboratório: 17c69319942b2da4295a3547bf2fc10ca3b0943a</p>
 <p>Utilize as técnicas de enumeração NFS no host 172.16.1.251 e informe quais as versões NFS suportadas.</p>
-<p>![[/Untitled 11 3.png|Untitled 11 3.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2011%203.png" /></p>
 <h1 id="lab-10">LAB 10</h1>
 <p><strong>FTP</strong></p>
 <p>ID do laboratório: cdcad4766b40276231f58d0825b5b1f7b9a62470</p>
 <p>Enumere o serviço de FTP do host: 172.16.1.31 e encontre uma chave para pontuar.</p>
-<p>![[/Untitled 12 3.png|Untitled 12 3.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2012%203.png" /></p>
 <h1 id="lab-11">LAB 11</h1>
 <p><strong>FTP - PARTE I</strong></p>
 <p>Lab ID: 243ac57079c67f699cc4fb5d4f1194aa5ea7de0e</p>
 <p>Utilize as técnicas de enumeração no host 172.16.1.251 e informe a versão do serviço FTP encontrada.</p>
-<p>Resposta : ProFTPD1.3.5</p>
-<p>![[/Untitled 13 2.png|Untitled 13 2.png]]</p>
+<p>Resposta : ProFTPD1.3.5
+<img alt="" src="../../assets/Untitled%2013%202.png" /></p>
 <h1 id="lab-12">LAB 12</h1>
 <p><strong>FTP - PARTE II</strong></p>
 <p>Lab ID: 73e7e0bf78736e9ce093713e726947bacf4254c5</p>
 <p>Ganhe acesso ao serviço de FTP no host 172.16.1.251 e consiga a key para pontuar.</p>
 <p>Resposta: ce6cfad1ff11b600bef6da1aa844996a</p>
-<p>![[/Untitled 14 2.png|Untitled 14 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2014%202.png" /></p>
 <h1 id="lab-13">LAB 13</h1>
 <p><strong>SMB</strong></p>
 <p>Lab ID: 7b581af4c9208ce84bab830e23567ef64655bb87</p>
-<p>Enumere o serviço de SMB e consiga a chave para pontuar.</p>
-<p>![[/Untitled 15 2.png|Untitled 15 2.png]]</p>
+<p>Enumere o serviço de SMB e consiga a chave para pontuar.
+<img alt="" src="../../assets/Untitled%2015%202.png" /></p>
 <ul>
 <li><code>**smbclient**</code>: é o comando para acessar recursos compartilhados em servidores SMB.</li>
 <li><code>**L**</code>: é o parâmetro para listar recursos compartilhados.</li>
 <li><code>**//172.16.1.4/**</code>: especifica o endereço IP do servidor e o nome do compartilhamento. No caso, <code>**172.16.1.4**</code> é o endereço IP do servidor e <code>**/**</code> indica que queremos listar todos os compartilhamentos disponíveis no servidor.</li>
 <li><code>**N**</code>: indica que queremos fazer a conexão sem especificar um nome de usuário ou senha.</li>
 </ul>
-<p>Este comando retornará uma lista dos compartilhamentos disponíveis no servidor SMB com o endereço IP <code>**172.16.1.4**</code>.</p>
-<p>![[/Untitled 16 2.png|Untitled 16 2.png]]</p>
-<p>![[/Untitled 17 2.png|Untitled 17 2.png]]</p>
+<p>Este comando retornará uma lista dos compartilhamentos disponíveis no servidor SMB com o endereço IP <code>**172.16.1.4**</code>.
+<img alt="" src="../../assets/Untitled%2016%202.png" /></p>
+<p><img alt="" src="../../assets/Untitled%2017%202.png" /></p>
 <h1 id="lab-14">LAB 14</h1>
 <p><strong>SNMP</strong></p>
 <p>Lab ID: 7dca58db46ecb2efbc629f69b32fc468435067af</p>
 <p>Enumere o serviço de SNMP e consiga a KEY para pontuar.</p>
-<p>![[/Untitled 18 2.png|Untitled 18 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2018%202.png" /></p>
 <ul>
 <li><code>**snmpwalk**</code>: comando para caminhar pela árvore de informações SNMP.</li>
 <li><code>**c public**</code>: especifica a comunidade SNMP a ser usada. A comunidade SNMP é semelhante a uma senha e é usada para autenticar o acesso ao dispositivo SNMP. Aqui, a comunidade é "public", que é comumente usada para acesso de leitura (read-only).</li>
@@ -954,8 +954,8 @@ SELECT * FROM ativa;</code></p>
 <h1 id="lab-15">LAB 15</h1>
 <p><strong>SNMP II</strong></p>
 <p>Lab ID: f142b53623052d1c9395beca20bca731c15f8439</p>
-<p>Utilize as técnicas de análise SNMP no host: 172.30.0.103 e informe qual a community utilizada no serviço.</p>
-<p>![[/Untitled 19 2.png|Untitled 19 2.png]]</p>
+<p>Utilize as técnicas de análise SNMP no host: 172.30.0.103 e informe qual a community utilizada no serviço.
+<img alt="" src="../../assets/Untitled%2019%202.png" /></p>
 <ul>
 <li><code>**onesixtyone**</code>: o nome do comando utilizado para iniciar a ferramenta.</li>
 <li><code>**c /usr/share/wordlists/metasploit/snmp_default_pass.txt**</code>: especifica o caminho para o arquivo contendo as strings que serão usadas para brute force nas comunidades SNMP. Neste caso, a ferramenta está usando o arquivo <code>**snmp_default_pass.txt**</code> que contém senhas padrão comumente usadas em comunidades SNMP.</li>
@@ -966,7 +966,7 @@ SELECT * FROM ativa;</code></p>
 <p><strong>SNMP II</strong></p>
 <p>Lab ID: 8e993cde6c1d62fef19e51cbce068613422127d4</p>
 <p>Utilize as técnicas de análise SNMP no host:172.30.0.103 e informe qual o hostname.</p>
-<p>![[/Untitled 20 2.png|Untitled 20 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2020%202.png" /></p>
 <ul>
 <li><code>**snmp-check**</code>: o nome do comando utilizado para iniciar a ferramenta.</li>
 <li><code>**172.30.0.103**</code>: o endereço IP do dispositivo remoto que será enumerado.</li>
@@ -980,16 +980,16 @@ SELECT * FROM ativa;</code></p>
 <p><strong>SNMP II</strong></p>
 <p>Lab ID: 4290653214d09bc7150226b2b1f3670c2a146545</p>
 <p>Utilize as técnicas de análise SNMP no host:172.30.0.103 e encontre a chave para pontuar em informações sobre o armazenamento do discos do host.</p>
-<p>![[/Untitled 20 2.png|Untitled 20 2.png]]</p>
-<p>![[/Untitled 21 2.png|Untitled 21 2.png]]</p>
+<p><img alt="" src="../../assets/Untitled%2020%202.png" /></p>
+<p><img alt="" src="../../assets/Untitled%2021%202.png" /></p>
 <h1 id="lab-18">LAB 18</h1>
 <p><strong>SNMP II</strong></p>
 <p>Lab ID: 198cac2b229c544247ecf1fd8a9f8ecb9a2df46b</p>
-<p>Utilize as técnicas de análise SNMP no host:172.30.0.103 e informe quais usuários foram encontrados.</p>
-<p>![[131e63d5-70b0-4c4d-949b-0ae7cf82ae09.png]]</p>
-<p>![[66d4941f-5964-42f0-8016-3e22abaf02fa.png]]</p>
-<p><code>**snmpwalk -c Secret -v1 172.30.0.103 1.3.6.1.4.1.77.1.2.25**</code>: Este comando realiza uma caminhada no dispositivo SNMP para obter informações sobre os usuários. Ele especifica a comunidade SNMP "Secret", a versão SNMPv1 e o OID (Object Identifier) 1.3.6.1.4.1.77.1.2.25, que é usado para consultar informações sobre usuários.</p>
-<p>![[Untitled 22.png]]</p>
+<p>Utilize as técnicas de análise SNMP no host:172.30.0.103 e informe quais usuários foram encontrados.
+<img alt="" src="../../assets/131e63d5-70b0-4c4d-949b-0ae7cf82ae09.png" /></p>
+<p><img alt="" src="../../assets/66d4941f-5964-42f0-8016-3e22abaf02fa.png" /></p>
+<p><code>**snmpwalk -c Secret -v1 172.30.0.103 1.3.6.1.4.1.77.1.2.25**</code>: Este comando realiza uma caminhada no dispositivo SNMP para obter informações sobre os usuários. Ele especifica a comunidade SNMP "Secret", a versão SNMPv1 e o OID (Object Identifier) 1.3.6.1.4.1.77.1.2.25, que é usado para consultar informações sobre usuários.
+<img alt="" src="../../assets/Untitled%2022.png" /></p>
 
 
 
