@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://legitwell.github.io/Vlabs/Semana%2006%20-%20OSINT/Semana%2006%20-%20OSINT/">
+        <link rel="canonical" href="https://legitwell.github.io/Vlabs/Semana%2008%20-%20Hashes%20e%20Senhas/Hashes/">
       
       
-        <link rel="prev" href="../../Semana%2006%20-%20Mecanismo%20de%20Defesa/Semana%2006%20-%20Mecanismo%20de%20Defesa/">
+        <link rel="prev" href="../HASHES%20LINUX%20-%20PENTEST%202/">
       
-      
-        <link rel="next" href="../../Semana%2006%20-%20Scanning/Semana%2006%20-%20Scanning/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>LAB 01 - LAB Desec</title>
+        <title>Hashes - LAB Desec</title>
       
     
     
@@ -72,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-01" class="md-skip">
+        <a href="#lab-01-arquivo-suspeito-analise-de-integridade" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LAB 01
+              Hashes
             
           </span>
         </div>
@@ -495,20 +493,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -524,7 +520,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Semana 06   OSINT
@@ -535,19 +531,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Semana%2006%20-%20OSINT/Semana%2006%20-%20OSINT/" class="md-nav__link">
         
   
   
@@ -558,7 +545,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -779,18 +765,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
           <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
@@ -806,7 +794,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Semana 08   Hashes e Senhas
@@ -820,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Semana%2008%20-%20Hashes%20e%20Senhas/HASHES%20LINUX%20-%20PENTEST%201/" class="md-nav__link">
+      <a href="../HASHES%20LINUX%20-%20PENTEST%201/" class="md-nav__link">
         
   
   
@@ -843,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Semana%2008%20-%20Hashes%20e%20Senhas/HASHES%20LINUX%20-%20PENTEST%202/" class="md-nav__link">
+      <a href="../HASHES%20LINUX%20-%20PENTEST%202/" class="md-nav__link">
         
   
   
@@ -863,10 +851,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Semana%2008%20-%20Hashes%20e%20Senhas/Hashes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Hashes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -877,6 +885,150 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-01-arquivo-suspeito-analise-de-integridade" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 01 - Arquivo Suspeito (Análise de Integridade)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-02-hash-do-arquivo-verdadeiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 02 - Hash do Arquivo Verdadeiro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-03-hash-do-arquivo-suspeito" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 03 - Hash do Arquivo Suspeito
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-04-hash-sha-512" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 04 - Hash SHA-512
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-05-hash-passwd-base64" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 05 - Hash (passwd) + Base64
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-06-quebra-simples" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 06 - Quebra Simples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-07-quebra-com-multiplos-hashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 07 - Quebra com Múltiplos Hashes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -906,8 +1058,140 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-01-arquivo-suspeito-analise-de-integridade" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 01 - Arquivo Suspeito (Análise de Integridade)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-02-hash-do-arquivo-verdadeiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 02 - Hash do Arquivo Verdadeiro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-03-hash-do-arquivo-suspeito" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 03 - Hash do Arquivo Suspeito
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-04-hash-sha-512" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 04 - Hash SHA-512
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-05-hash-passwd-base64" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 05 - Hash (passwd) + Base64
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-06-quebra-simples" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 06 - Quebra Simples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-07-quebra-com-multiplos-hashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      LAB 07 - Quebra com Múltiplos Hashes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evidencia-print-do-resultado_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evidência (Print do Resultado)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -923,334 +1207,170 @@
 
 
 
-<h1 id="lab-01">LAB 01</h1>
-<p><strong>Lab ID:</strong> d4e17e1d388d22ed5faa00dd4d7c4351e3ea88fa</p>
-<p><strong>Recon</strong></p>
-<p><strong>Analisando o mail.businesscorp.com.br</strong></p>
-<p><strong>Pergunta:</strong><br />
-Quais portas TCP estão abertas?</p>
-<p><strong>Resposta:</strong></p>
-<p>Para identificar as portas TCP abertas no host mail.businesscorp.com.br, utilizamos o comando <code>**nmap**</code> com as seguintes opções:</p>
-<pre><code class="language-Shell">
-nmap -Pn -sSV -p- mail.businesscorp.com.br --open -T5
+  <h1>Hashes</h1>
 
-
+<h3 id="lab-01-arquivo-suspeito-analise-de-integridade">LAB 01 - Arquivo Suspeito (Análise de Integridade)</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>2d0ca0338671c349fc7ef8466b8f22b589c8756c</code></p>
+<p><strong>Pergunta:</strong> Qual o nome do arquivo do suposto malware?</p>
+<p><strong>Resposta:</strong> O suposto malware é o arquivo que tem o hash MD5 divergente (único) em relação a todos os outros arquivos da amostra. Utilizamos o comando <code>md5sum</code> combinado com <code>sort</code>, <code>uniq -c</code> e <code>grep -v</code> para isolar a anomalia.</p>
+<p><strong>Comando Utilizado:</strong></p>
+<pre><code>md5sum * | sort | uniq -c | grep -v '92'
 </code></pre>
-<p><img alt="" src="../../assets/Untitled.png" /></p>
-<p>Aqui está uma explicação detalhada do comando utilizado:</p>
+<p><strong>Explicação do Comando:</strong></p>
 <ul>
-<li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
-<li><code>**Pn**</code>: Desativa a verificação de host online, permitindo a varredura de hosts que não respondem ao ping.</li>
-<li><code>**sSV**</code>: Realiza um scan de serviços e versões. Essa opção permite detectar informações detalhadas sobre os serviços em execução.</li>
-<li><code>-``**p-**</code>: Varre todas as 65535 portas TCP.</li>
-<li><code>**mail.businesscorp.com.br**</code>: Especifica o host alvo da varredura.</li>
-<li><code>**-open**</code>: Mostra apenas os hosts com portas abertas.</li>
-<li><code>**T5**</code>: Define o nível de agressividade da varredura. Neste caso, o valor 5 indica alta velocidade e agressividade.</li>
+<li>
+<p><strong><code>md5sum *</code></strong>: Calcula o hash MD5 de todos os arquivos.</p>
+</li>
+<li>
+<p><strong><code>sort | uniq -c</code></strong>: Agrupa e conta hashes idênticos.</p>
+</li>
+<li>
+<p><strong><code>grep -v '92'</code></strong>: Exclui (inverte a busca) todas as linhas que contêm o hash majoritário (<code>...92</code>), deixando apenas o hash único.</p>
+</li>
 </ul>
-<p>O resultado da varredura mostrou que o host mail.businesscorp.com.br possui as seguintes portas TCP abertas:</p>
+<p><strong>Resultado Obtido:</strong> O arquivo com a contagem de <code>1</code> e o hash exclusivo é:</p>
 <ul>
-<li>==21/tcp: FTP (ProFTPD 1.3.5)==</li>
-<li>==80/tcp: HTTP (Apache httpd 2.4.10 (Debian))==</li>
-<li>==110/tcp: POP3 (Courier pop3d)==</li>
-<li>==143/tcp: IMAP (Courier Imapd - versão lançada em 2011)==</li>
+<li><strong>Nome do Arquivo Suspeito:</strong> <code>CleanZoomHost38.exe</code></li>
 </ul>
-<p>Além disso, foi identificado que o sistema operacional do host é ==Unix.==</p>
+<h3 id="evidencia-print-do-resultado">Evidência (Print do Resultado)</h3>
+<p><img alt="" src="../../assets/Pasted%20image%2020251118021541.png" /></p>
+<h3 id="lab-02-hash-do-arquivo-verdadeiro">LAB 02 - Hash do Arquivo Verdadeiro</h3>
 <hr />
-<h1 id="lab-02">LAB 02</h1>
-<p><strong>Lab ID:</strong> cd80018932136b6804afc03404755d6e2403e20a</p>
-<p><strong>Recon II</strong></p>
-<p><strong>Analisando o mail.businesscorp.com.br</strong></p>
-<p><strong>Pergunta:</strong><br />
-Quais portas UDP estão/está aberta?</p>
-<p><strong>Resposta:</strong></p>
-<p>Para identificar as portas UDP abertas no host mail.businesscorp.com.br, utilizamos o comando <code>**nmap**</code> com as seguintes opções:</p>
-<pre><code class="language-Shell">
-nmap -Pn -sUV --top-ports=10 mail.businesscorp.com.br --open -T5
-
-
+<p><strong>ID do Lab:</strong> <code>3f9574657d50564a04141146805aef66b923a7ce</code></p>
+<p><strong>Pergunta:</strong> Qual o hash md5 do arquivo verdadeiro?</p>
+<p><strong>Resposta:</strong> O hash do arquivo "verdadeiro" é o hash majoritário, compartilhado por quase todos os arquivos na amostra (49 cópias), indicando a versão original não modificada.</p>
+<p><strong>Comando Utilizado (Implícito no Lab 01):</strong></p>
+<pre><code>md5sum CleanZoom.exe
 </code></pre>
-<p><img alt="" src="../../assets/Untitled%201.png" /></p>
-<p>Aqui está uma explicação detalhada do comando utilizado:</p>
+<p><strong>Resultado Obtido:</strong> O hash que aparece em 49 instâncias é:</p>
 <ul>
-<li><code>**nmap**</code>: Este é o comando principal para iniciar o utilitário de varredura de rede.</li>
-<li><code>**Pn**</code>: Desativa a verificação de host online, permitindo a varredura de hosts que não respondem ao ping.</li>
-<li><code>**sUV**</code>: Realiza um scan de serviços e versões para protocolos UDP. Essa opção permite detectar informações detalhadas sobre os serviços em execução no protocolo UDP.</li>
-<li><code>**-top-ports=10**</code>: Varre as 10 portas UDP mais comuns.</li>
-<li><code>**mail.businesscorp.com.br**</code>: Especifica o host alvo da varredura.</li>
-<li><code>**-open**</code>: Mostra apenas os hosts com portas abertas.</li>
-<li><code>**T5**</code>: Define o nível de agressividade da varredura. Neste caso, o valor 5 indica alta velocidade e agressividade.</li>
+<li><strong>Hash MD5 Verdadeiro:</strong> <code>37ecb62f912e85ac16faf220a3d09292</code></li>
 </ul>
-<p>O resultado da varredura mostrou que o host mail.businesscorp.com.br possui as seguintes portas UDP abertas:</p>
-<ul>
-<li>==53/udp: Serviço de domínio (domain?)== ==Open==</li>
-<li>==135/udp: MS RPC (Microsoft Remote Procedure Call)== ==filtered==</li>
-<li>==137/udp: NetBIOS Name Service (netbios-ns)== ==filtered==</li>
-<li>==138/udp: NetBIOS Datagram Service (netbios-dgm)== ==filtered==</li>
-<li>==445/udp: Microsoft-DS (Microsoft Directory Services)== ==filtered==</li>
-</ul>
-<p>Algumas das portas estão marcadas como "open|filtered", o que indica que o estado da porta não pôde ser determinado com certeza devido a filtragem.</p>
+<h3 id="evidencia-print-do-resultado_1">Evidência (Print do Resultado)</h3>
+<p><img alt="" src="../../assets/Pasted%20image%2020251118021621.png" /></p>
+<h3 id="lab-03-hash-do-arquivo-suspeito">LAB 03 - Hash do Arquivo Suspeito</h3>
 <hr />
-<h1 id="lab-03">LAB 03</h1>
-<p><strong>Lab ID:</strong> 5e1c51a7dd4c5cc22bbaef665ffb1a4b7c450b59</p>
-<p><strong>Recon III</strong></p>
-<p><strong>Analisando o mail.businesscorp.com.br</strong></p>
-<p><strong>Pergunta:</strong><br />
-Qual a key no banner da porta UDP identificada?</p>
-<p><strong>Resposta:</strong></p>
-<p>Para identificar a "key" no banner da porta UDP identificada (porta 53), utilizamos o comando <code>**nc**</code> para conectar-se ao serviço DNS na porta 53 e observar a resposta do banner.</p>
-<pre><code class="language-Shell">
-nc -uv mail.businesscorp.com.br 53
+<p><strong>ID do Lab:</strong> <code>06a2282dee4b129309e936d86eba4f979d11c046</code></p>
+<p><strong>Pergunta:</strong> Qual o hash md5 do arquivo suspeito?</p>
+<p><strong>Resposta:</strong> O hash do arquivo suspeito é o valor único encontrado apenas na anomalia <code>CleanZoomHost38.exe</code>.</p>
+<p><strong>Comando Utilizado (Implícito no Lab 01):</strong></p>
+<p>Bash</p>
+<pre><code>md5sum CleanZoomHost38.exe
+</code></pre>
+<p><strong>Resultado Obtido:</strong> O hash encontrado apenas uma vez é:</p>
+<ul>
+<li><strong>Hash MD5 Suspeito:</strong> <code>6bc664de142144d81576fe4788d60327</code></li>
+</ul>
+<h3 id="evidencia-print-do-resultado_2">Evidência (Print do Resultado)</h3>
+<p><img alt="" src="../../assets/Pasted%20image%2020251118021721.png" /></p>
+<h3 id="lab-04-hash-sha-512">LAB 04 - Hash SHA-512</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>8ea65f3c8b9439b2ff70519abdb73469eb325cfa</code></p>
+<p><strong>Pergunta:</strong> Qual o hash sha512 da palavra <code>keeplearning</code>?</p>
+<p><strong>Resposta:</strong> Utilizamos o comando <code>echo -n</code> para evitar que a quebra de linha (<code>\n</code>) seja incluída na string antes de passar para o <code>sha512sum</code>.</p>
+<p><strong>Comando Utilizado:</strong></p>
+<p>Bash</p>
+<pre><code>echo -n &quot;keeplearning&quot; | sha512sum
+</code></pre>
+<p><strong>Explicação do Comando:</strong></p>
+<ul>
+<li>
+<p><strong><code>echo -n "..."</code></strong>: Imprime a string sem o caractere de nova linha.</p>
+</li>
+<li>
+<p><strong><code>| sha512sum</code></strong>: Pipe (envia) a string para o programa que calcula o hash SHA-512.</p>
+</li>
+</ul>
+<p><strong>Resultado Obtido:</strong></p>
+<ul>
+<li><strong>Hash SHA-512:</strong> <code>1d2da0cc838de8996cc71dc72bdbbe03d347b573cb3a4ab46c9e68987832f6bfe192579ab7604cdea76347828b3a0382602401e3417cc8a53e87da7565da4766</code></li>
+</ul>
+<h3 id="evidencia-print-do-resultado_3">Evidência (Print do Resultado)</h3>
+<p><img alt="" src="../../assets/Pasted%20image%2020251118021755.png" /></p>
+<h3 id="lab-05-hash-passwd-base64">LAB 05 - Hash (passwd) + Base64</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>4fe73c50da0bb9a565542ff267e6837340c1f715</code></p>
+<p><strong>Pergunta:</strong> Gere o hash (passwd) sha256 com o salt definido como "desec" e senha "1337" e informe o resultado encodado em base64.</p>
+<p><strong>Resposta:</strong> Primeiro, geramos o hash com <code>openssl passwd</code> e depois usamos <code>echo -n</code> com pipe para encodá-lo em Base64. O <code>sha256</code> usa o identificador <code>$5$</code>.</p>
+<p><strong>Comando Utilizado:</strong></p>
+<p>Bash</p>
+<pre><code># Geração do hash ($5$desec$KcaDk1xKzoNseKHrUDCMB.3jpw80sSTQrW1ltnzFiy0)
+openssl passwd -5 -salt desec 1337
 
+# Encodificação em Base64:
+echo -n '$$desec$KcaDk1xKzoNseKHrUDCMB.3jpw80sSTQrW1ltnzFiy0' | base64
+</code></pre>
+<p><strong>Explicação do Comando:</strong></p>
+<ul>
+<li>
+<p><strong><code>openssl passwd -5 -salt desec 1337</code></strong>: Gera um hash usando SHA-256 (<code>-5</code>), com salt <code>desec</code> e senha <code>1337</code>.</p>
+</li>
+<li>
+<p><strong><code>echo -n '...' | base64</code></strong>: Envia o hash gerado (incluindo o <code>$</code>) para o <code>base64</code>.</p>
+</li>
+</ul>
+<p><strong>Resultado Obtido:</strong></p>
+<ul>
+<li><strong>Hash (Base64):</strong> <code>JDUkZGVzZWMkS2NhRGsxeEt6b05zZUtIclVEQ01CLjNqcHc4MHNzVFFydzFMdG56Rml5MA==</code></li>
+</ul>
+<h3 id="evidencia-print-do-resultado_4">Evidência (Print do Resultado)</h3>
+<p><img alt="" src="../../assets/Pasted%20image%2020251118021915.png" /></p>
+<h3 id="lab-06-quebra-simples">LAB 06 - Quebra Simples</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>48a049e6aaabd7471fbb1fd00fe8f3a88c17c5b6</code></p>
+<p><strong>Pergunta:</strong> Descubra qual a senha do seguinte hash: <code>7084668f3a53d5545a823399ed561b3d</code></p>
+<p><strong>Resposta:</strong> O hash tem 32 caracteres, indicando ser <strong>MD5</strong>. Usamos um serviço de quebra online (como o Hashes.com, citado na evidência) para quebrar o hash, pois MD5 sem salt é facilmente encontrado em Rainbow Tables.</p>
+<p><strong>Comando Utilizado (Para Referência - Não obrigatório):</strong></p>
+<pre><code> Encontrar o tipo (MD5)
+hash-identifier 7084668f3a53d5545a823399ed561b3d
+</code></pre>
+<p><strong>Resultado Obtido:</strong></p>
+<ul>
+<li><strong>Senha Descoberta:</strong> <code>_power11</code></li>
+</ul>
+<h3 id="evidencia-print-do-resultado_5">Evidência (Print do Resultado)</h3>
+<p><img alt="" src="../../assets/Pasted%20image%2020251118021944.png" /></p>
+<h3 id="lab-07-quebra-com-multiplos-hashes">LAB 07 - Quebra com Múltiplos Hashes</h3>
+<hr />
+<p><strong>ID do Lab:</strong> <code>2a90888ad0b436693738646821d351384a596a6d</code></p>
+<p><strong>Pergunta:</strong> Descubra a senha do hash <code>806825f0827b628e81620f0d83922fb2c52c7136</code>, que é gerado por <strong>MD5 -&gt; Base64 -&gt; SHA1</strong>.</p>
+<p><strong>Resposta:</strong> É necessário criar um script em Bash que simule o algoritmo de hashing complexo (MD5 da senha, Base64 do MD5, e SHA1 do Base64) para cada senha em uma wordlist e compare o resultado com o hash alvo.</p>
+<p><strong>Comando Utilizado (Script):</strong></p>
+<pre><code>./HasheScript.sh
+</code></pre>
+<p><strong>Código do Script (<code>HasheScript.sh</code>):</strong></p>
+<pre><code>#!/bin/bash
 
-</code></pre>
-<p><img alt="" src="../../assets/Untitled%202.png" /></p>
-<p>Aqui está uma explicação detalhada do comando utilizado:</p>
-<ul>
-<li><code>**nc**</code>: Este é o comando utilizado para iniciar a ferramenta de conexão de rede.</li>
-<li><code>**uv**</code>: Opções que especificam que queremos usar o protocolo UDP (<code>**u**</code>) e ativar o modo de verificação reversa para resolução de DNS (<code>**v**</code>).</li>
-<li><code>**mail.businesscorp.com.br**</code>: Especifica o host alvo para a conexão.</li>
-<li><code>**53**</code>: Especifica o número da porta que queremos conectar (no caso, a porta UDP 53 para DNS).</li>
-</ul>
-<p>O resultado da conexão mostrou o banner do serviço DNS, que inclui a key identificada como:</p>
-<pre><code class="language-Plain">Copy code
-DESEC DNS SERVER 901238127-1281321-d192919
+# Define a wordlist (dica do lab) e o hash alvo
+wordlist=&quot;/usr/share/john/password.lst&quot;
+hash=&quot;806825f0827b628e81620f0d83922fb2c52c7136&quot;
 
+# Loop para ler cada linha (senha) da wordlist
+while read senha; do
+    # Gera o hashx aplicando o algoritmo de 3 passos:
+    # 1. echo -n &quot;$senha&quot; | md5sum | head -c 32  (MD5 da senha)
+    # 2. base64 -w 0 (Base64 do MD5)
+    # 3. sha1sum | head -c 40 (SHA1 do Base64)
+    hashx=$(echo -n &quot;$senha&quot; | md5sum | head -c 32 | base64 -w 0 | sha1sum | head -c 40)
+
+    # Compara o hash gerado (hashx) com o hash alvo
+    if [ &quot;$hash&quot; = &quot;$hashx&quot; ]; then
+        echo &quot;Hash encontrado ====&gt; $hashx&quot;
+        echo &quot;Senha encontrada ====&gt; $senha&quot;
+        exit 0
+    fi
+done &lt; $wordlist
+
+exit 1
 </code></pre>
-<p>Essa é a "key" encontrada no banner da porta UDP 53 no host mail.businesscorp.com.br.</p>
-<hr />
-<h1 id="lab-04">LAB 04</h1>
-<p><strong>Lab ID:</strong> f7506c0fb77e7d8ffc6b8faae173b2eeb843674f</p>
-<p><strong>OSINT</strong></p>
-<p><strong>Informação Encontrada:</strong></p>
-<p>Durante a fase de Information Gathering, foi possível identificar um vazamento de dados de e-mail do domínio businesscorp.com.br. Após a investigação, foram encontrados os seguintes dados:</p>
+<p><strong>Resultado Obtido:</strong> O script encontra a correspondência após testar várias senhas:</p>
 <ul>
-<li><strong>Usuário:</strong> camila</li>
-<li><strong>Senha:</strong> ca123456</li>
+<li><strong>Senha Descoberta:</strong> <code>help123</code></li>
 </ul>
-<p><strong>Passos Realizados:</strong></p>
-<ol>
-<li>
-<p>Identificação dos servidores de nomes (NS) do domínio businesscorp.com.br:</p>
-<p>```Shell</p>
-<p>host -t ns businesscorp.com.br | cut -d " " -f4
-```</p>
-</li>
-</ol>
-<p><img alt="" src="../../assets/Untitled%203.png" />    </p>
-<ol>
-<li>
-<p>Realização de uma transferência de zona (AXFR) para obter informações sobre os registros do domínio:</p>
-<p>```Bash</p>
-<p>host -l -a businesscorp.com.br ns2.businesscorp.com.br
-```</p>
-</li>
-</ol>
-<p><img alt="" src="../../assets/Untitled%204.png" />    </p>
-<ol>
-<li>Acesso ao site do Trello indicado na resposta do laboratório:</li>
-<li>
-<p>==<a href="https://trello.com/b/kaqiIGDl/businesscorpcombr"><strong>https://trello.com/b/kaqiIGDl/businesscorpcombr</strong></a>====.==
-<img alt="" src="../../assets/Untitled%205.png" /></p>
-</li>
-<li>
-<p>Acesso ao link do Pastebin contendo as credenciais vazadas: ==<a href="https://pastebin.com/57J3tLmc"><strong>https://pastebin.com/57J3tLmc</strong></a>====.==
-<img alt="" src="../../assets/Untitled%206.png" /></p>
-</li>
-</ol>
-<p><strong>Informação Obtida:</strong></p>
-<ul>
-<li>==<strong>Usuário:</strong>== ==camila==</li>
-<li>==<strong>Senha:</strong>== ==ca123456==</li>
-</ul>
-<p>Estas são as credenciais encontradas no vazamento de dados do domínio businesscorp.com.br durante a fase de Information Gathering.</p>
-<hr />
-<h1 id="lab-05">LAB 05</h1>
-<p><strong>Lab ID:</strong> a94c482b6350083881ea19393ec1ba423a0086fd</p>
-<p><strong>OSINT II</strong></p>
-<p><strong>Informação Encontrada:</strong></p>
-<p>Durante a análise do serviço de e-mail hospedado no host mail.businesscorp.com.br, foi possível identificar o nome do serviço de e-mail utilizado:</p>
-<ul>
-<li><strong>Nome do Serviço de E-mail: ==Postfix==</strong></li>
-</ul>
-<p><strong>Passos Realizados:</strong></p>
-<ol>
-<li>
-<p>Conexão ao serviço de e-mail no host mail.businesscorp.com.br na porta 110 usando o protocolo POP3:</p>
-<p>```Plain</p>
-<p>nc -v mail.businesscorp.com.br 110</p>
-<p>```
-<img alt="" src="../../assets/Untitled%207.png" />
-1. Autenticação no serviço de e-mail com as credenciais obtidas anteriormente:</p>
-<p>```Bash</p>
-<p>USER camila
-PASS ca123456
-```</p>
-</li>
-</ol>
-<p><img alt="" src="../../assets/Untitled%208.png" />    </p>
-<ol>
-<li>
-<p>Utilização do comando LIST para listar os e-mails disponíveis:</p>
-<p>```Plain</p>
-<p>LIST
-```</p>
-<p><img alt="" src="../../assets/Untitled%209.png" />
-1. Para visualizar o conteúdo do e-mail, foi utilizado o comando RETR seguido do número do e-mail:</p>
-<p>```Plain</p>
-<p>RETR 1
-```</p>
-</li>
-</ol>
-<p><img alt="" src="../../assets/Untitled%2010.png" />    </p>
-<pre><code>O conteúdo do e-mail foi exibido, incluindo informações sobre o remetente, destinatário, assunto e corpo da mensagem.
-</code></pre>
-<ol>
-<li>O procedimento foi repetido para outros e-mails, como no caso do comando RETR 2, para obter informações adicionais.
-<img alt="" src="../../assets/Untitled%2011.png" /></li>
-</ol>
-<p><strong>Informação Obtida:</strong></p>
-<p>O serviço de e-mail utilizado é o ==<strong>POSTFIX</strong>==, como evidenciado nos cabeçalhos dos e-mails.</p>
-<p>Exemplo de cabeçalho do e-mail: ==Received: by== ==<a href="http://businesscorp.com.br/">businesscorp.com.br</a>== ==(Postfix, from userid 33)==
-<img alt="" src="../../assets/Untitled%2012.png" /></p>
-<p>Esta é a informação sobre o serviço de e-mail utilizado no host mail.businesscorp.com.br.</p>
-<hr />
-<h1 id="lab-06">LAB 06</h1>
-<p><strong>Lab ID:</strong> 5951994a8e5899becc82db06c6b0c8cb3c090798</p>
-<p><strong>OSINT III</strong></p>
-<p>Durante a análise do host mail.businesscorp.com.br, foi possível identificar o serviço utilizado para webmail:</p>
-<ul>
-<li><strong>Serviço de Webmail Utilizado: ==SquirrelMail==</strong></li>
-</ul>
-<p>O SquirrelMail foi identificado nos cabeçalhos dos e-mails, como no exemplo abaixo:</p>
-<pre><code class="language-Makefile">
-User-Agent: SquirrelMail/1.4.23 [SVN]
-</code></pre>
-<p><img alt="" src="../../assets/Untitled%2013.png" /></p>
-<p>Esta é a informação sobre o serviço de webmail utilizado no host mail.businesscorp.com.br.</p>
-<h3 id="lab-7">LAB 7</h3>
-<p>Lab ID: d6122d2498ed54e03ed511ba3765be726cb8dfce</p>
-<p><strong>OSINT IV</strong></p>
-<p>Durante a análise do host mail.businesscorp.com.br, foi possível identificar a versão do serviço utilizado para webmail:</p>
-<ul>
-<li>Versão <strong>Serviço de Webmail Utilizado:</strong> ==SquirrelMail/1.4.23==</li>
-</ul>
-<hr />
-<h1 id="lab-08">LAB 08</h1>
-<p>Lab ID: 96e960bf324552b9bd259c4ba4f282810c1a91ca</p>
-<p>OSINT V</p>
-<ul>
-<li>O e-mail corporativo enviado para a colaboradora Camila foi de ==jotafsantos@businesscorp.com.br==</li>
-</ul>
-<hr />
-<h1 id="lab-09">LAB 09</h1>
-<p>Lab ID: 0814ccb8677c278e6467fb7f84d256b90d3f142e</p>
-<p>OSINT VI</p>
-<ul>
-<li>A primeira mensagem foi : ==09/10/2018==</li>
-</ul>
-<hr />
-<h1 id="lab-10">LAB 10</h1>
-<p>Lab ID: 48e3a108b96624fe432acd5ebe21ad1a6564e29b</p>
-<p>OSINT VII</p>
-<ul>
-<li>O IP que enviou a primeira mensagem : ==189.29.146.62==</li>
-</ul>
-<hr />
-<h1 id="lab-11">LAB 11</h1>
-<p>Lab ID: 51a3ca114c9c7d2dfbcae794a0f5a77e88873aa1</p>
-<p>OSINT VIII</p>
-<p><strong>Passos Realizados:</strong></p>
-<ol>
-<li>
-<p>Conexão ao serviço de e-mail no host mail.businesscorp.com.br na porta 143 usando o protocolo IMAP:
-    <img alt="" src="../../assets/Untitled%2014.png" /></p>
-<ol>
-<li>
-<p><code>**nc -v mail.businesscorp.com.br 143**</code>:</p>
-<ul>
-<li><code>nc</code>: É o comando para iniciar uma conexão de rede. Neste caso, estamos usando <code>nc</code> para iniciar uma conexão TCP.</li>
-<li><code>v</code>: Ativa o modo verbose, o que significa que irá exibir informações detalhadas sobre a conexão à medida que ela acontece.</li>
-<li><code>mail.businesscorp.com.br</code>: É o endereço do servidor ao qual estamos nos conectando.</li>
-<li><code>143</code>: Este é o número da porta usado para comunicações IMAP (Internet Message Access Protocol). É onde o serviço IMAP estará ouvindo no servidor.</li>
-</ul>
-<p><strong>Explicação</strong>: Com esse comando, estamos iniciando uma conexão com o servidor de e-mail <code>mail.businesscorp.com.br</code> na porta 143, que é a porta padrão para o protocolo IMAP.</p>
-</li>
-<li>
-<p><code>**a LOGIN camila ca123456**</code>:</p>
-<ul>
-<li><code>a</code>: Esta é uma tag arbitrária que usamos para identificar os comandos enviados. No IMAP, os comandos são identificados por tags.</li>
-<li><code>LOGIN</code>: Este é o comando IMAP para autenticar um usuário.</li>
-<li><code>camila</code>: É o nome de usuário usado para fazer login na conta de e-mail.</li>
-<li><code>ca123456</code>: É a senha associada à conta de e-mail.</li>
-</ul>
-<p><strong>Explicação</strong>: Com este comando, estamos autenticando na conta de e-mail com o nome de usuário <code>camila</code> e a senha <code>ca123456</code>.</p>
-</li>
-<li>
-<p><code>**a LIST "*"**</code>:</p>
-<ul>
-<li><code>LIST</code>: Este comando é usado para listar as caixas de correio disponíveis no servidor IMAP.</li>
-<li><code>"*"</code>: É um argumento usado para listar todas as caixas de correio.</li>
-</ul>
-<p><strong>Explicação</strong>: Com este comando, estamos solicitando uma lista de todas as caixas de correio disponíveis na conta.</p>
-</li>
-<li>
-<p><code>**a STATUS INBOX.Sent**</code>:</p>
-<ul>
-<li><code>STATUS</code>: Este comando é usado para obter o status de uma caixa de correio específica.</li>
-<li><code>INBOX.Sent</code>: É o nome da caixa de correio para a qual queremos obter o status.</li>
-</ul>
-<p><strong>Explicação</strong>: Este comando é usado para obter informações sobre a caixa de correio "Sent".</p>
-</li>
-<li>
-<p><code>**a SEARCH FROM "camila"**</code>:</p>
-<ul>
-<li><code>SEARCH</code>: Este comando é usado para realizar uma busca dentro da caixa de correio.</li>
-<li><code>FROM "camila"</code>: Este é um critério de busca para encontrar e-mails enviados por "camila".</li>
-</ul>
-<p><strong>Explicação</strong>: Estamos procurando todos os e-mails na caixa de correio que foram enviados por "camila".</p>
-</li>
-<li>
-<p><code>**a FETCH 2 (BODY[1.1])**</code>:</p>
-<ul>
-<li><code>FETCH</code>: Este comando é usado para recuperar informações sobre uma mensagem específica.</li>
-<li><code>2</code>: É o número da mensagem que queremos recuperar.</li>
-<li><code>(BODY[1.1])</code>: Este é um argumento para especificar que queremos recuperar o corpo da mensagem.</li>
-</ul>
-<p><strong>Explicação</strong>: Com este comando, estamos recuperando o corpo da segunda mensagem na caixa de correio.</p>
-</li>
-</ol>
-<p>Esses comandos permitem que você se autentique na conta de e-mail, liste as caixas de correio disponíveis, obtenha informações sobre a caixa de correio "Sent", realize uma busca por e-mails enviados por "camila" e, por fim, obtenha o corpo de uma mensagem específica. O conteúdo dessa mensagem contém a ==senha "bj9384221-==", conforme solicitado.
-<img alt="" src="../../assets/Untitled%2015.png" /></p>
-<hr />
-<h1 id="lab-12">LAB 12</h1>
-<p>Lab ID: dbfc1186829c76cc4fd0791c854a4be479cc846b</p>
-<p>OSINT IX</p>
-<ul>
-<li>O email corporativo foi encontrado ao usar o comando <code>RETR 2</code> para ler a segunda mensagem do inbox e o email encontrado foi : <strong>==dev@businesscorp.com.br==</strong></li>
-</ul>
-<hr />
-<h1 id="lab-13">LAB 13</h1>
-<p>Lab ID: ad86e1a8e8da9e3392964eab7203677e4963ad7e</p>
-<p>OSINT X</p>
-<ol>
-<li>
-<p>Acesse essa URL <a href="http://mail.businesscorp.com.br/">mail.businesscorp.com.br</a>
-    <img alt="" src="../../assets/Untitled%2016.png" /></p>
-</li>
-<li>
-<p>Faça a autenticação<br />
-    Usuario: camila<br />
-    senha: bj9384221
-    <img alt="" src="../../assets/Untitled%2017.png" /></p>
-</li>
-</ol>
-<hr />
-<h1 id="lab-14">LAB 14</h1>
-<p>Lab ID: 2a609e861ddb928e22e19a2f70b83c936124f2f5</p>
-<p>OSINT XI</p>
-<p><img alt="" src="../../assets/Untitled%2018.png" />  </p>
-</li>
-</ol>
+<h3 id="evidencia-print-do-resultado_6">Evidência (Print do Resultado)</h3>
+<p><img alt="" src="../../assets/Pasted%20image%2020251118022044.png" />
+<img alt="" src="../../assets/Pasted%20image%2020251118022052.png" /></p>
 
 
 
