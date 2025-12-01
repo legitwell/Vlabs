@@ -16,7 +16,7 @@ Identificar todas as portas TCP **abertas** no host monitorado.
 
 
 
-![](assets/Pasted%20image%2020251101193530.png)
+![](../assets/Pasted%20image%2020251101193530.png)
 3. Anotar os números de porta dos pacotes **SYN-ACK**.
 
 ### Resultado
@@ -44,7 +44,7 @@ nmap -Pn -sV -sC --script=banner 172.16.1.3 \
 ```
 
 
-![](assets/Pasted%20image%2020251101193644.png)
+![](../assets/Pasted%20image%2020251101193644.png)
 
 ### Saída resumida
 
@@ -98,11 +98,11 @@ nc -vn -w1 172.16.1.55 44905
 
 
 
-![](assets/Pasted%20image%2020251101195217.png)
+![](../assets/Pasted%20image%2020251101195217.png)
 
 
 
-![](assets/Pasted%20image%2020251101195232.png)
+![](../assets/Pasted%20image%2020251101195232.png)
 
 ### Pacote IP – Dissecação byte-a-byte
 
@@ -126,7 +126,7 @@ nc -vn -w1 172.16.1.55 44905
 
 
 
-![](assets/Pasted%20image%2020251101195901.png)
+![](../assets/Pasted%20image%2020251101195901.png)
 
 
 
@@ -136,7 +136,7 @@ dst http port 80 /malware.txt - KEY:00298417172
 
 ### Chave extraída
 
-![](assets/Pasted%20image%2020251101200021.png)
+![](../assets/Pasted%20image%2020251101200021.png)
 
 
 
